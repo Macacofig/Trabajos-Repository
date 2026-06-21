@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMSA - Home Ciudadano</title>
+
+    <!-- 1. Agregamos el CSS base y el nuevo CSS oscuro del Sidebar Ciudadano -->
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/citizen_sidebar.css">
+
+    <!-- Tu CSS específico de esta vista -->
+    <link rel="stylesheet" href="../styles/user_home.css">
+
+    <!-- Fuentes e Iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="citizen-theme">
+
+    <!-- 2. Envolvemos todo en el layout principal -->
+    <div class="main-layout">
+
+        <!-- 3. AQUÍ SE INYECTA EL SIDEBAR DEL CIUDADANO -->
+        <div id="sidebar-container"></div>
+
+        <!-- 4. Contenido original, lo hacemos flexible y scrolleable -->
+        <main class="content-area">
+
+            <div class="left-panel">
+
+                <!-- HEADER -->
+                <header class="main-header">
+                    <h1 class="titulo">EMSA</h1>
+                </header>
+
+                <!-- FILTROS -->
+                <section class="filters">
+                    <form class="filter-bar">
+
+                        <!-- DISTRITO -->
+                        <label>
+                            <span>Distrito</span>
+                            <select id="filter-distrito">
+                                <option value="">Seleccionar</option>
+                                <option value="2">Distrito 2</option>
+                                <option value="6">Distrito 6</option>
+                                <option value="7">Distrito 7</option>
+                                <option value="8">Distrito 8</option>
+                                <option value="9">Distrito 9</option>
+                                <option value="15">Distrito 15</option>
+                            </select>
+                        </label>
+
+                        <!-- ZONA -->
+                        <label>
+                            <span>Zona</span>
+                            <select id="filter-zona">
+                                <option value="">Seleccionar</option>
+                            </select>
+                        </label>
+
+                        <!-- DÍA -->
+                        <label>
+                            <span>Día</span>
+                            <select id="filter-dia">
+                                <option value="">Seleccionar</option>
+                                <option value="lunes">Lunes</option>
+                                <option value="martes">Martes</option>
+                                <option value="miércoles">Miércoles</option>
+                                <option value="jueves">Jueves</option>
+                                <option value="viernes">Viernes</option>
+                                <option value="sabado">Sábado</option>
+                                <option value="domingo">Domingo</option>
+                            </select>
+                        </label>
+
+                        <!-- RUTA -->
+                        <label>
+                            <span>Ruta</span>
+                            <input type="text" id="filter-ruta" placeholder="Ej: CALA CALA">
+                        </label>
+
+                        <!-- FILTRO ESTRICTO -->
+                        <label style="flex-direction: row; align-items: center; gap: 6px;">
+                            <input type="checkbox" id="filter-estricto" style="width:auto; padding:0;">
+                            <span>Estricto</span>
+                        </label>
+
+                        <button type="button" class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+
+                    </form>
+                </section>
+
+                <!-- RESULTADOS -->
+                <section class="results">
+                    <h2 class="subtitulo">Días de Servicio</h2>
+                    <div id="grid-cards" class="grid-cards"></div>
+                    <div id="confirmation-message" style="display:none;" class="confirmation-box">
+                        <p id="confirmation-text"></p>
+                        <button id="confirm-btn">Confirmar selección</button>
+                        <button id="cancel-btn">Cancelar</button>
+                    </div>
+
+                </section>
+
+            </div>
+
+            <!-- MAPA DE DISTRITOS -->
+            <aside class="right-panel">
+                <div class="map-card">
+                    <h3 class="map-title"><i class="fas fa-map-marked-alt"></i> Mapa de Distritos</h3>
+                    <p class="map-desc">Haz clic en el mapa para ampliar</p>
+                    <div class="map-image-container" id="map-container">
+                        <img src="../assets/mapa_distritos.jpg" alt="Mapa de Distritos EMSA" class="map-image" id="map-image">
+                        <div class="map-overlay">
+                            <i class="fas fa-search-plus"></i>
+                            <span>Ver mapa completo</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- MODAL DEL MAPA -->
+            <div class="map-modal-overlay" id="map-modal">
+                <span class="close-modal" id="close-modal">&times;</span>
+                <img src="../assets/mapa_distritos.jpg" alt="Mapa de Distritos - Ampliado" class="modal-content-img">
+            </div>
+
+        </main>
+    </div>
+
+    <!-- 5. Script para cargar el sidebar y resaltar "Rutas y Horarios" -->
+    <script type="module">
+        // ¡RUTA CORREGIDA AQUÍ!
+        import { loadSidebar } from '../utils/sidebar_loader.js';
+
+        // El motor busca el ID 'menu-citizen-home' en tu archivo citizen_sidebar.html y lo ilumina
+        loadSidebar('citizen', 'menu-citizen-home');
+    </script>
+
+    <!-- Tu presentador original -->
+    <script type="module" src="../functions/Citizen/Citizen.WasteCollections.presenter.js"></script>
+</body>
+
+</html>

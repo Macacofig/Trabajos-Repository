@@ -1,0 +1,40 @@
+@use '../scss/index.scss';
+@use '../scss/estudiante.scss';
+@use '../scss/cursos.scss';
+@use '../scss/inscripciones.scss';
+@use '../scss/dashboard.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .sidebar {
+    background: #1e1e1e;
+}
+
+body.dark .main {
+    background: #181818;
+}
+
+body.dark input,
+body.dark select {
+    background: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+body.dark table {
+    background: #1e1e1e;
+}
+
+body.dark .modal-content {
+    background: #222;
+    color: white;
+}

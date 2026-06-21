@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudiantes</title>
+
+  <link rel="stylesheet" href="../styles/css/main.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Académico</h2>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="estudiantes.html" class="active">Estudiantes</a>
+      <a href="cursos.html">Cursos</a>
+      <a href="inscripciones.html">Inscripciones</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <button id="toggle-dark">Modo oscuro</button>
+  </aside>
+  <script type="module" src="/dist/UI/main.js"></script>
+  <!-- MAIN -->
+  <main class="main">
+
+    <header class="header">
+      <h1>Gestión de Estudiantes</h1>
+    </header>
+
+    <!-- ===== FILTROS ===== -->
+    <section class="filters">
+      <input 
+        id="search" 
+        type="text" 
+        placeholder="Buscar por nombre" 
+      />
+      <button id="search-btn">Buscar</button>
+      <select id="filter-state">
+        <option value="all">Todos</option>
+        <option value="active">Activos</option>
+        <option value="inactive">Inactivos</option>
+      </select>
+      <button id="clear-filters">Limpiar Filtros</button>
+    </section>
+
+    <!-- ERROR BUSQUEDA -->
+    <p id="search-error" style="color:red; font-size: 14px;"></p>
+
+    <!-- ===== FORMULARIO ===== -->
+    <section>
+      <form id="student-form" class="form">
+
+        <div class="field">
+          <label for="name">Nombre Estudiante</label>
+          <input id="name" type="text" placeholder="Nombre completo" />
+          <small class="error" id="error-name"></small>
+        </div>
+
+        <div class="field">
+          <label for="email">Correo eletronico</label>
+          <input id="email" type="email" placeholder="Correo" />
+          <small class="error" id="error-email"></small>
+        </div>
+
+        <div class="field">
+          <label for="years">Edad</label>
+          <input id="years" type="number" placeholder="Edad" />
+          <small class="error" id="error-years"></small>
+        </div>
+
+        <div class="field">
+          <label for="career">Carrera</label>
+          <input id="career" type="text" placeholder="Carrera" />
+          <small class="error" id="error-career"></small>
+        </div>
+        <!-- BOTONES -->
+        <button type="submit">Guardar Estudiante</button>
+        <button type="button" id="clear-form">Limpiar Formulario</button>
+
+      </form>
+    </section>
+
+    <!-- ===== TABLA ===== -->
+    <section>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Edad</th>
+            <th>Carrera</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody id="table-body"></tbody>
+      </table>
+    </section>
+
+  </main>
+
+</div>
+
+<!-- SCRIPT -->
+<script type="module" src="/dist/UI/Students.render.js"></script>
+
+<!-- ===== MODAL BACKDROP ===== -->
+<div id="modal-backdrop" class="modal-backdrop hidden"></div>
+
+<!-- ===== MODAL DELETE ===== -->
+<div id="delete-modal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Confirmar eliminación</h3>
+    <p>¿Seguro que deseas eliminar este estudiante?</p>
+
+    <div class="modal-actions">
+      <button id="cancel-delete">Cancelar</button>
+      <button id="confirm-delete" class="danger">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL EDIT ===== -->
+<div id="edit-modal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Editar estudiante</h3>
+
+    <form id="edit-form" class="form">
+      <input id="edit-name" placeholder="Nombre" required />
+      <input id="edit-email" placeholder="Correo" required />
+      <input id="edit-years" type="number" placeholder="Edad" required />
+      <input id="edit-career" placeholder="Carrera" required />
+
+      <!-- AQUÍ SÍ VA EL ESTADO -->
+      <select id="edit-state">
+        <option value="active">Activo</option>
+        <option value="inactive">Inactivo</option>
+      </select>
+
+      <div class="modal-actions">
+        <button type="submit">Guardar</button>
+        <button type="button" id="cancel-edit">Cancelar</button>
+        
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos</title>
+
+  <link rel="stylesheet" href="../styles/css/main.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Académico</h2>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="estudiantes.html">Estudiantes</a>
+      <a href="cursos.html" class="active">Cursos</a>
+      <a href="inscripciones.html">Inscripciones</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <button id="toggle-dark">Modo oscuro</button>
+  </aside>
+  <script type="module" src="/dist/UI/main.js"></script>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <header class="header">
+      <h1>Gestión de Cursos</h1>
+    </header>
+
+    <!-- FILTROS -->
+    <section class="filters">
+      <input id="buscar-curso" type="text" placeholder="Buscar por nombre o sigla..." />
+      <button id="search-btn">Buscar</button>
+      <small id="search-error"></small>
+      <select id="filtro-estado-curso">
+        <option value="all">Todos</option>
+        <option value="available">Disponibles</option>
+        <option value="closed">Cerrados</option>
+      </select>
+      <button id="clear-filters">Limpiar Filtros</button>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section>
+      <form id="form-curso" class="form">
+        <div class="field">
+          <label for="name">Nombre Curso</label>
+          <input id="name" type="text" placeholder="Nombre del curso" />
+          <small class="error" id="error-name"></small>
+        </div>
+
+        <div class="field">
+          <label for="code">Sigla</label>
+          <input id="code" type="text" placeholder="Sigla" />
+          <small class="error" id="error-code"></small>
+        </div>
+
+        <div class="field">
+          <label for="docente">Docente</label>
+          <input id="docente" type="text" placeholder="Nombre del docente" />
+          <small class="error" id="error-docente"></small>
+        </div>
+
+        <div class="field">
+          <label for="cupo">Cupo</label>
+          <input id="cupo" type="text" placeholder="Cupo" />
+          <small class="error" id="error-cupo"></small>
+        </div>
+
+        <button type="submit">Guardar</button>
+        <button type="button" id="clear-form">Limpiar Formulario</button>
+      </form>
+    </section>
+
+    <!-- TABLA -->
+    <section>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Sigla</th>
+            <th>Docente</th>
+            <th>Cupo</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+
+        <tbody id="tabla-cursos"></tbody>
+      </table>
+    </section>
+
+  </main>
+
+</div>
+
+<script type="module" src="/dist/UI/Subjects.render.js"></script>
+
+<!-- ===== MODAL BACKDROP ===== -->
+<div id="modal-backdrop" class="modal-backdrop hidden"></div>
+
+<!-- ===== MODAL DELETE ===== -->
+<div id="delete-modal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Confirmar eliminación</h3>
+    <p>¿Seguro que deseas eliminar este curso?</p>
+
+    <div class="modal-actions">
+      <button id="cancel-delete">Cancelar</button>
+      <button id="confirm-delete" class="danger">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL EDIT ===== -->
+<div id="edit-modal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Editar Curso</h3>
+
+    <form id="edit-form" class="form">
+      <input id="edit-name" placeholder="Nombre" required />
+      <input id="edit-code" placeholder="Sigla" required />
+      <input id="edit-docente" placeholder="Docente" required />
+      <input id="edit-cupo" type="number" placeholder="Cupo máximo" required />
+      
+
+      <!-- AQUÍ SÍ VA EL ESTADO -->
+      <select id="edit-state">
+        <option value="available">Disponible</option>
+        <option value="closed">Cerrado</option>
+      </select>
+
+      <div class="modal-actions">
+        <button type="submit">Guardar</button>
+        <button type="button" id="cancel-edit">Cancelar</button>
+        
+      </div>
+    </form>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+@use "variables";
+
+@mixin shadow($color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: 0 10px 25px $color;
+}
+
+@mixin button-style($bg, $color) {
+  background: $bg;
+  color: $color;
+  padding: 0.7rem 1.2rem;
+  border-radius: variables.$radius;
+  border: none; // Eliminar borde predeterminado
+  cursor: pointer;
+  transition: variables.$transition;
+}

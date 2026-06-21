@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: #121212; /* Dark charcoal background */
+  color: #F4F4F0; /* Off-white text */
+  overflow: hidden;
+}
+
+/* Títulos con tipografía brutalista */
+h1, h2, h3, h4, .titulo, .subtitulo {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  color: #F4F4F0;
+}
+
+/* LAYOUT PRINCIPAL RE-DISEÑADO CON GRID DINÁMICO */
+.main-layout {
+  display: grid !important;
+  grid-template-columns: auto 1fr !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+  gap: 20px !important;
+  overflow: hidden !important;
+}
+
+/* CONTENEDORES PRINCIPALES (BRUTALISTAS) */
+.content-wrapper,
+.content-area,
+.main-content,
+.page-container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  overflow-y: auto !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  flex: 1 !important;
+
+  background: #1A1A1A !important;
+  border-radius: 8px !important;
+  border: 2px solid #333 !important;
+  box-shadow: none !important;
+}
+
+/* PANEL IZQUIERDO Y DERECHO */
+.left-panel {
+  flex: 3 !important;
+  min-width: 300px !important;
+}
+
+.right-panel {
+  flex: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 250px !important;
+}
+
+.card,
+.glass-card {
+  background: #1A1A1A;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-radius: 8px;
+  box-shadow: none;
+  border: 2px solid #333;
+  padding: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h2 {
+  margin: 0;
+  color: #F4F4F0;
+}
+
+/* SCROLL AREA */
+.scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-right: 5px;
+}
+
+/* FORMULARIO Y CAMPOS */
+label {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #aaa;
+  font-weight: 500;
+  display: block;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 2px solid #333;
+  background: #121212;
+  color: #F4F4F0;
+  box-sizing: border-box;
+  transition: 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+select:focus,
+input:focus {
+  outline: none;
+  border-color: #FE8330;
+  box-shadow: none;
+}
+
+/* BOTONES BRUTALISTAS */
+button {
+  border: 2px solid transparent;
+  border-radius: 4px;
+  padding: 12px;
+  cursor: pointer;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  transition: 0.2s;
+  text-transform: uppercase;
+}
+
+.btn-save {
+  margin-top: 20px;
+  background: #FE8330;
+  color: #111;
+  width: 100%;
+  border: 2px solid #FE8330;
+}
+
+.btn-save:hover {
+  background: #121212;
+  color: #FE8330;
+}
+
+.btn-clear {
+  background: transparent;
+  color: #F4F4F0;
+  border: 2px dashed #555;
+  width: auto;
+  padding: 8px 15px;
+  font-size: 1rem;
+}
+
+.btn-clear:hover {
+  border-color: #ff5f56;
+  color: #ff5f56;
+}
+
+.btn-save-all {
+  margin-top: 15px;
+  background: transparent;
+  color: #FE8330;
+  border: 2px solid #FE8330;
+  width: 100%;
+}
+.btn-save-all:hover {
+  background: #FE8330;
+  color: #111;
+}
+
+/* RUTAS UI */
+.ruta-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.ruta-input input {
+  flex: 1;
+}
+
+.ruta-input button {
+  width: 45px;
+  background: #2ecc71;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lista-rutas {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.ruta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 4px;
+  font-size: 14px;
+  border: 1px dashed #444;
+  color: #ddd;
+}
+
+.ruta-item button {
+  background: #ff5f56;
+  color: #111;
+  padding: 4px 8px;
+  font-size: 1rem;
+  border-radius: 2px;
+  border: none;
+}
+
+/* Scrollbar moderno */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* MENSAJES Y ERRORES */
+.error {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.form-message {
+  font-size: 13px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.form-message.error {
+  color: #e74c3c;
+}
+
+.form-message.success {
+  color: #2ecc71;
+}
+
+@media (max-width: 1024px) {
+  .main-layout {
+    /* Keep the grid to prevent overlap, just reduce gap and padding */
+    padding: 10px !important;
+    gap: 10px !important;
+  }
+}
+
+/* RESPONSIVIDAD EN MÓVILES */
+@media (max-width: 768px) {
+  .main-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  .content-wrapper,
+  .content-area,
+  .main-content,
+  .page-container {
+    border-radius: 20px 20px 0 0 !important;
+    padding: 20px !important;
+    margin-top: 60px !important;
+    /* Espacio para el header móvil */
+    height: calc(100vh - 60px) !important;
+  }
+}
+
+/* Botón Hamburguesa Global */
+.mobile-header {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 99;
+  }
+
+  .mobile-menu-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: -10px;
+    /* alinear al borde */
+  }
+}

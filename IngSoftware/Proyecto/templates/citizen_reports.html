@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Reportes</title>
+
+  <!-- 1. Estilos base y el CSS modular del Sidebar Ciudadano -->
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/citizen_sidebar.css">
+
+  <!-- Estilo específico de tu vista -->
+  <link rel="stylesheet" href="../styles/citizen_reports.css">
+
+  <!-- Fuentes e Iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<!-- Bloqueamos márgenes/padding del body para que el sidebar empiece desde el borde absoluto -->
+
+<body class="citizen-theme">
+
+  <!-- 2. Layout principal -->
+  <div class="main-layout">
+
+    <!-- 3. AQUÍ SE INYECTA EL SIDEBAR DEL CIUDADANO -->
+    <div id="sidebar-container"></div>
+
+    <!-- 4. Contenedor que ocupa el resto de la pantalla, permite scroll, y le devolvemos el padding de 25px que tenía originalmente -->
+    <div class="page-container"
+      style="flex: 1; height: 100vh; overflow-y: auto; padding: 25px; box-sizing: border-box;">
+
+      <!-- HEADER -->
+      <header class="page-header">
+        <h1>Mis Reportes</h1>
+        <p>Historial de incidencias registradas</p>
+      </header>
+
+      <!-- FILTROS -->
+      <div class="glass-container" style="display: flex; flex-direction: column; gap: 20px;">
+      <section class="filters-section">
+        <div class="filters-container">
+
+          <!-- FECHA -->
+          <div class="filter-group">
+            <label>Fecha mínima</label>
+            <input type="date" id="dateFilter">
+          </div>
+
+          <!-- BOTONES -->
+          <button id="filterButton" class="filter-btn">Filtrar</button>
+          <button id="clearButton" class="clear-btn">Limpiar</button>
+
+        </div>
+      </section>
+
+      <!-- REPORTES -->
+      <section>
+        <div id="reportsContainer" class="reports-container"></div>
+      </section>
+    </div>
+    </main>
+  </div>
+
+  <!-- 5. Llamamos al motorcito y le decimos que resalte "Mis Reportes" -->
+  <script type="module">
+    // ¡RUTA CORREGIDA AQUÍ!
+    import { loadSidebar } from '../utils/sidebar_loader.js';
+    loadSidebar('citizen', 'menu-citizen-reports');
+  </script>
+
+  <!-- Presentador original (Con la ruta corregida a "Citizen") -->
+  <script type="module" src="../functions/Citizen/Citizen.Reports.presenter.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+TENIS
+
+Empieza set  Love-Love
+
+1er anote -> 15
+2do anote -> 30
+3er anote -> 40
+
+J1 && j2 = 40 -> Deuce = Empate
+
+J1 anote -> Advantage J1
+J1 anote -> Game for J1
+
+
+(inicio) -> "Love-Love"
+(anote(j1)) -> "15-Love"
+(anote(j2)) -> "Love-15"
+(anote(j1);anote(j1)) -> "30-Love"
+(anote(j1);anote(j2)) -> "15-15"
+(anote(j1);anote(j1);anote(j1)) -> "40-Love"
+(anote(j1);anote(j1);anote(j1);anote(j1)) -> "Game for Player 1"
+(anote(j1);anote(j1);anote(j1);anote(j2);anote(j2);anote(j2)) -> "Deuce"
+(anote(j1);anote(j1);anote(j1);anote(j2);anote(j2);anote(j2);anote(j1)) -> "Advantage Player 1"
+(anote(j1);anote(j1);anote(j1);anote(j2);anote(j2);anote(j2);anote(j1);anote(j2)) -> "Deuce"
+(anote(j1);anote(j1);anote(j1);anote(j2);anote(j2);anote(j2);anote(j1);anote(j2);anote(j1);anote(j1)) -> "Game for player 1"
+
+
+

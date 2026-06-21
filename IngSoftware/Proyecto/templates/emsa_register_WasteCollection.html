@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xml:lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMSA PROYECT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Mantenemos el estilo base y agregamos el nuevo CSS modular de EMSA -->
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/emsa_sidebar.css">
+</head>
+
+<body>
+  <div class="main-layout">
+
+    <!-- AQUÍ ESTÁ LA MAGIA: El contenedor vacío que recibirá el Sidebar dinámicamente -->
+    <div id="sidebar-container"></div>
+
+    <!-- Todo tu contenido funcional queda exactamente igual, no se toca nada de la lógica -->
+    <main class="content-area">
+
+      <div class="form-panel-full">
+        <div class="form-section">
+          <div class="card-header">
+            <h2>Registrar servicio</h2>
+            <span id="form-message" class="form-message"></span>
+            <button type="button" id="clearBtn" class="btn-clear">Clear</button>
+          </div>
+
+          <form id="formulario">
+            <label>Día:</label>
+            <select id="daySelect">
+              <option value="">Selecciona un día</option>
+              <option value="lunes">Lunes</option>
+              <option value="martes">Martes</option>
+              <option value="miércoles">Miércoles</option>
+              <option value="jueves">Jueves</option>
+              <option value="viernes">Viernes</option>
+              <option value="sábado">Sábado</option>
+              <option value="domingo">Domingo</option>
+            </select>
+            <small class="error" id="error-day"></small>
+
+            <label>Distrito:</label>
+            <select id="distrito">
+              <option value="">Selecciona distrito</option>
+              <option value="2">Distrito 2</option>
+              <option value="6">Distrito 6</option>
+              <option value="7">Distrito 7</option>
+              <option value="8">Distrito 8</option>
+              <option value="9">Distrito 9</option>
+              <option value="15">Distrito 15</option>
+            </select>
+            <small class="error" id="error-district"></small>
+
+            <label>Zona:</label>
+            <select id="zona">
+              <option value="">Selecciona zona</option>
+            </select>
+            <small class="error" id="error-zone"></small>
+
+            <label>Horario:</label>
+            <input type="time" id="schedule">
+            <small class="error" id="error-schedule"></small>
+
+            <label>Rutas:</label>
+            <div class="ruta-input">
+              <input type="text" id="inputRuta" placeholder="Ej: Ruta Norte 1">
+              <button type="button" id="addRuta">+</button>
+            </div>
+            <small class="error" id="error-rutas"></small>
+
+            <ul id="lista-rutas" class="lista-rutas"></ul>
+
+            <button type="submit" class="btn-save">Guardar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="form-panel-full">
+        <div class="form-section">
+          <h2>Registros Nuevos</h2>
+          <div id="lista-registros" class="scroll-area"></div>
+          <button id="guardarTodo" class="btn-save-all">
+            Guardar todo
+          </button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- NUEVO: Llamamos al script que inyecta el sidebar de EMSA y resalta la pestaña "Register New" -->
+  <script type="module">
+    // ¡AQUÍ ESTÁ LA CORRECCIÓN! Ruta actualizada apuntando directo a ../utils/
+    import { loadSidebar } from '../utils/sidebar_loader.js';
+    loadSidebar('emsa', 'menu-emsa-register');
+  </script>
+
+  <!-- Tu presentador original -->
+  <script type="module" src="../functions/EMSA/Emsa.WasteCollection.presenter.js"></script>
+</body>
+
+</html>

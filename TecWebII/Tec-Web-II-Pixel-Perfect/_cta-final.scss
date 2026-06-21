@@ -1,0 +1,121 @@
+@use 'mixins';
+@use 'variables';
+@use 'sass:color';
+
+.cta-final {
+    padding: 50px 0;
+    background-color: variables.$primary-blue; 
+    color: variables.$white;
+    text-align: left;
+
+    &__container {
+        max-width: variables.$container-max-width;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    &__content {
+        max-width: 600px; 
+
+        h2 {
+            font-family:'Nunito-Bold', sans-serif;
+            font-size: 3.3rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 9px;
+        }
+
+        p {
+            font-family: 'Rubik-normal', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 37px;
+            opacity: 0.9;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 20px;
+
+        .store-btn {
+            img {
+                height: 40px; 
+                width: auto;
+                transition: transform 0.3s ease;
+                
+                &:hover {
+                    transform: translateY(-5px); 
+                }
+            }
+        }
+    }
+
+    /* TABLET */
+    @include mixins.respond-to(tablet) {
+        text-align: center;
+
+        &__content {
+            margin: 0 10px;
+
+            h2 {
+                font-size: 2.6rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        &__buttons {
+            justify-content: center;
+        }
+    }
+
+    /* MOBILE */
+    @include mixins.respond-to(mobile) {
+        padding: 40px 0;
+
+        &__content {
+            h2 {
+                font-size: 2.1rem;
+                line-height: 1.2;
+            }
+
+            p {
+                font-size: 0.95rem;
+                margin-bottom: 25px;
+            }
+        }
+
+        &__buttons {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .store-btn img {
+                height: 38px;
+            }
+        }
+    }
+
+    /* MOBILE PEQUEÑO */
+    @include mixins.respond-to(mobile-sm) {
+
+        &__content {
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        &__buttons {
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+
+            .store-btn img {
+                height: 36px;
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(56, 133, 133);
+}
+
+#titulo-principal{
+    color: rgb(154, 200, 98);
+    font-size: 50px;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+.text{
+    
+    font-size: 15px;
+}
+
+/*margin: arriba derecha abajo izquierda;*/
+/*margin: (arriba,abajo) / (izquierda/derecha)*/
+.caja{
+    background-color: rgb(77, 129, 120);
+    padding: 10px;
+    margin: 10px auto;
+    border: 5px solid black;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    color:rgb(255,255,255)
+}
+
+img{
+    margin: 20px auto;
+}
+li{
+    margin: 10px;
+    list-style: none;
+}
+
+/*cambiar de color segun el hover*/
+.caja:hover {
+    background-color: rgb(0, 0, 0);
+}

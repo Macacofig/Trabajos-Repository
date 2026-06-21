@@ -1,0 +1,165 @@
+@use '../variables';
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #1a1a1a;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 99999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    &.active { display: flex !important; }
+
+    .modal-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(variables.$black-coffee, 0.6);
+        backdrop-filter: blur(10px);
+    }
+
+    .modal-content {
+        position: relative;
+        width: 100%;
+        max-width: 850px;
+        background: variables.$white-coffee;
+        border-radius: 2rem;
+        overflow: hidden; // Esto corta la imagen para que no se salga
+        z-index: 100;
+        display: grid;
+        grid-template-columns: 1fr; // Móvil: Una sola columna
+        box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+        animation: modalIn 0.4s ease-out;
+
+        @media (min-width: 768px) {
+            grid-template-columns: 1fr 1fr; // PC: Dos columnas iguales
+            height: 550px;
+        }
+    }
+
+    .modal-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 110;
+        background: rgba(255,255,255,0.8);
+        border: none;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        
+        &:hover { background: #fff; transform: scale(1.1); }
+    }
+
+    .image-side {
+        width: 100%;
+        height: 300px; // Altura fija en móvil
+        background: #eee;
+
+        @media (min-width: 768px) {
+            height: 100%; // Altura total en PC
+            order: 2; // La imagen a la derecha para un look moderno
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; // Esto hace que la imagen no se deforme
+            display: block;
+        }
+    }
+
+    .info-side {
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: variables.$white-coffee;
+
+        .cat-tag {
+            display: inline-block;
+            background: rgba(variables.$black-coffee, 0.05);
+            padding: 0.3rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            color: variables.$black-coffee;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: variables.$black-coffee;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        #modal-detalle {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .price-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+
+            .price {
+                font-size: 2rem;
+                font-weight: 800;
+                color: variables.$black-coffee;
+            }
+
+            .btn-add {
+                background: variables.$black-coffee;
+                color: white;
+                border: none;
+                padding: 0.8rem 1.5rem;
+                border-radius: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: opacity 0.2s;
+                &:hover { opacity: 0.9; }
+            }
+        }
+    }
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}

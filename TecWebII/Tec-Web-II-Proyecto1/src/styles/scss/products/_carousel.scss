@@ -1,0 +1,108 @@
+@use '../variables';
+@use '../mixins';
+
+.carousel-viewport {
+    overflow: hidden;
+    padding: 2rem 0 6rem;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    width: 400%; // 4 categorías
+}
+
+.category-view {
+    width: 25%; // 100% / 4 categorías
+    flex-shrink: 0;
+    padding: 0 2rem; // Padding moderado
+    box-sizing: border-box; // Vital para que el padding no sume al ancho
+}
+
+.products-grid {
+    display: grid;
+    // Esto asegura que las tarjetas tengan un tamaño mínimo y se ajusten solas
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background: variables.$white;
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(variables.$black-coffee, 0.05);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    .card-image-container {
+        height: 320px;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        &::after {
+            content: '+ Quick View';
+            position: absolute;
+            inset: 0;
+            background: rgba(variables.$black-coffee, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: variables.$white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+        }
+    }
+
+    .card-info {
+        padding: 1.5rem;
+        text-align: center;
+        flex-grow: 1;
+
+        h2 {
+            color: variables.$black-coffee;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: #888;
+            margin: 0;
+        }
+    }
+
+    .card-footer {
+        padding: 0 1.5rem 1.5rem;
+        text-align: center;
+
+        span {
+            font-weight: 800;
+            color: variables.$middle-coffee;
+            font-size: 1.25rem;
+        }
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        
+        .card-image-container img { transform: scale(1.1); }
+        .card-image-container::after { opacity: 1; }
+    }
+}

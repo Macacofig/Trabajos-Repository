@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Perfil Ciudadano</title>
+
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/citizen_sidebar.css">
+  <link rel="stylesheet" href="../styles/edit_profile.css">
+  
+  <!-- Reutilizamos la clase topbar para el mismo estilo de header -->
+  <link rel="stylesheet" href="../styles/emsa_reports.css">
+</head>
+
+<body class="citizen-theme">
+  <div class="main-layout">
+    <div id="sidebar-container"></div>
+    
+    <!-- Contenedor blanco estándar -->
+    <div class="page-container" style="flex: 1; height: 100vh; overflow-y: auto; padding: 40px; box-sizing: border-box;">
+      
+      <!-- HEADER IDÉNTICO A LA IMAGEN DE EJEMPLO -->
+      <header class="topbar">
+        <h1>Perfil Ciudadano</h1>
+        <p>Actualiza tu información personal</p>
+      </header>
+
+      <div class="edit-profile-container">
+        <div id="message-container" class="message"></div>
+
+        <form id="edit-profile-form">
+          <div class="form-group">
+            <label for="username">Nombre completo</label>
+            <input type="text" id="username" name="username" placeholder="Tu nombre" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Contraseña segura</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Actualizar Perfil</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DE ÉXITO -->
+  <div class="modal-overlay" id="success-modal">
+    <div class="modal success-modal">
+      <p class="success-modal-text">Los cambios fueron realizados</p>
+      <div class="modal-actions">
+        <button class="accept-btn" id="accept-btn">Aceptar</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="../functions/Users/User.Update.presenter.js"></script>
+  <script type="module">
+    import { loadSidebar } from '../utils/sidebar_loader.js';
+    loadSidebar('citizen', 'menu-user-profile');
+  </script>
+</body>
+</html>

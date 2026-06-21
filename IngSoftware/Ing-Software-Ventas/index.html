@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora Visual Pro</title>
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+  
+  <div class="header">
+    <h2>Calculadora de Precios</h2>
+    <p>Ingresa los datos para calcular el total</p>
+  </div>
+
+  <form id="formulario" class="formulario">
+    
+    <!-- Campo 1 -->
+    <div class="campo">
+      <label for="cantidad">Cantidad de item</label>
+      <input type="number" min="1" step="1" id="cantidad" name="cantidad" placeholder="Ej: 10" required>
+    </div>
+
+    <!-- Campo 2 -->
+    <div class="campo">
+      <label for="precio">Precio por item</label>
+      <input type="number" min="1" step="0.01" id="precio" name="precio" placeholder="Ej: 150.50" required>
+    </div>
+
+    <!-- Campo 3 -->
+    <div class="campo">
+      <label for="estados">Código de estado</label>
+      <select id="estados" name="estados">
+        <option value="">Selecciona estado</option>
+        <option value="UT">UT</option>
+        <option value="NV">NV</option>
+        <option value="TX">TX</option>
+        <option value="AL">AL</option>
+        <option value="CA" selected>CA</option>
+      </select>
+    </div>
+
+    <!-- Campo 4 -->
+    <div class="campo">
+      <label for="categorias">Categoría</label>
+      <select id="categorias" name="categorias">
+        <option value="Alimentos">Alimentos</option> 
+        <option value="Bebidas alcoholicas">Bebidas alcoholicas</option>
+        <option value="Material de escritorio">Material de escritorio</option>   
+        <option value="Electronicos">Electronicos</option>   
+        <option value="Vestimenta">Vestimenta</option>
+        <option value="Varios" selected>Varios</option>
+      </select>
+    </div>
+
+    <!-- Campo 5 -->
+    <div class="campo">
+      <label for="pesovolumetrico">Peso Volumétrico</label>
+      <input type="number" min="1" step="0.01" id="pesovolumetrico" name="pesovolumetrico" placeholder="Ej: 5.5" required>
+    </div>
+
+    <!-- Campo 6 -->
+    <div class="campo">
+      <label for="cliente">Tipo Cliente</label>
+      <select id="cliente" name="cliente">
+        <option value="Normal">Normal</option> 
+        <option value="Recurrente">Recurrente</option>
+        <option value="Antiguo Recurrente">Antiguo Recurrente</option>
+        <option value="Especial">Especial</option>
+      </select>
+    </div>
+
+    <div class="boton">
+      <button type="submit" class="calcular">
+        <span>Calcular</span>
+      </button>
+    </div>
+  </form>
+
+  <div class="resultados">
+    <h3>Detalles del Cálculo</h3>
+    
+    <div class="resultado">
+      <span class="label">Precio neto:</span>
+      <span class="valor" id="precioNeto">$0.00</span>
+    </div>
+
+    <div class="resultado">
+      <span class="label">Descuento (<span id="tipoDescuento">0%</span>):</span>
+      <span class="valor" id="totalConDescuento">$0.00</span>
+    </div>
+    
+    <div class="resultado">
+      <span class="label">Impuesto (<span id="tipoImpuesto">0%</span>):</span>
+      <span class="valor" id="totalConImpuesto">$0.00</span>
+    </div>
+
+    <div class="resultado">
+      <span class="label">Desc. Categoría (<span id="tipoDescuentocategoria">0%</span>):</span>
+      <span class="valor" id="totalConDescuentocategoria">$0.00</span>
+    </div>
+    
+    <div class="resultado">
+      <span class="label">Imp. Categoría (<span id="tipoImpuestocategoria">0%</span>):</span>
+      <span class="valor" id="totalConImpuestocategoria">$0.00</span>
+    </div>
+
+    <div class="resultado">
+      <span class="label">Peso Volumétrico:</span>
+      <span class="valor" id="totalpesovolumetrico">0</span>
+    </div>
+
+    <div class="resultado">
+      <span class="label">Desc. Cliente (<span id="tipoCliente">0%</span>):</span>
+      <span class="valor" id="totalTipoCliente">$0.00</span>
+    </div>
+
+    <div class="resultado">
+      <span class="label">Beneficio:</span>
+      <span class="valor" id="totalbeneficio">$0.00</span>
+    </div>
+
+    <div class="resultado total">
+      <span class="label">PRECIO TOTAL:</span>
+      <span class="valor" id="total">$0.00</span>
+    </div>
+  </div>
+
+</div>
+
+<script type="module" src="src/ventas/presenter-ventas.js"></script>
+</body>
+</html>

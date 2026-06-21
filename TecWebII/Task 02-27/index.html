@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Interfaz con Sass</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- CSS compilado desde Sass -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="card">
+    
+    <!-- Menú simple -->
+    <nav class="menu">
+      <ul>
+        <li>Inicio</li>
+        <li>Servicios</li>
+        <li>Contacto</li>
+      </ul>
+    </nav>
+
+    <!-- Contenido tarjeta -->
+    <h2>Tarjeta de ejemplo</h2>
+    <p>Interfaz creada con Sass usando variables, mixins y anidación.</p>
+
+    <!-- Formulario básico -->
+    <form class="form">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Contraseña" required>
+    </form>
+
+    <br>
+
+    <!-- Botones -->
+    <button class="button">Botón principal</button>
+    <button class="button button--secondary">Botón secundario</button>
+
+  </div>
+
+  <!-- Script opcional para modo oscuro -->
+  <script>
+    // Alternar modo oscuro con tecla D
+    document.addEventListener("keydown", function(e) {
+      if (e.key.toLowerCase() === "d") {
+        document.body.classList.toggle("dark-mode");
+      }
+    });
+  </script>
+
+</body>
+</html>

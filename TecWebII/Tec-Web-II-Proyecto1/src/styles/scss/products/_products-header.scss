@@ -1,0 +1,78 @@
+@use '../variables';
+@use '../mixins';
+
+
+.search-error {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.search-error.active {
+    opacity: 1;
+}
+.products-header {
+    padding: 8rem 2rem 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+
+    .brand-title {
+        font-family: serif;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        color: variables.$black-coffee;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+    }
+
+    .search-filters-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+
+        .search-box {
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            input {
+                width: 80%;
+                padding: 0.8rem 1rem 0.8rem 2.5rem;
+                border-radius: 2rem;
+                border: 1px solid #ddd;
+                outline: none;
+            }
+            &::before {
+                position: absolute;
+                left: 0.8rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        .category-chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            
+            .chip {
+                padding: 0.5rem 1.2rem;
+                border-radius: 2rem;
+                border: 1px solid variables.$middle-coffee;
+                cursor: pointer;
+                font-size: 0.9rem;
+                transition: 0.3s;
+
+                &.active {
+                    background: variables.$black-coffee;
+                    color: variables.$white;
+                }
+            }
+        }
+    }
+}

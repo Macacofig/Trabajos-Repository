@@ -1,0 +1,132 @@
+@use '../mixins';
+@use '../variables';
+
+.individual-comment {
+    strong {
+        display: block;
+        font-size: 0.85rem;
+        color: #555;
+        margin-bottom: 0.2rem;
+    }
+
+    p:last-child {
+        font-size: 0.95rem;
+        font-style: italic;
+    }
+}
+
+.comment-card {
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: white;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    &.is-expanded .arrow {
+        transform: rotate(180deg);
+    }
+    .comments-expansion {
+        max-height: 0; // Escondido por defecto
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        padding-top: 0;
+        
+        .individual-comment {
+            padding: 1rem 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            
+            p { font-size: 0.9rem; margin-bottom: 0.3rem; }
+            small { color: #999; font-size: 0.7rem; }
+        }
+    }
+
+    &.is-expanded {
+        .comments-expansion {
+            max-height: 500px; // Altura máxima al expandir
+            opacity: 1;
+            padding-top: 1rem;
+        }
+    }
+
+    &::after {
+        content: '“';
+        position: absolute;
+        top: 0.5rem;
+        right: 1.5rem;
+        font-family: serif;
+        font-size: 5rem;
+        color: variables.$middle-coffee;
+        opacity: 0.15; // Un poco más visible
+        line-height: 1;
+    }
+
+    &:hover {
+        transform: translateY(-8px); // Más salto al hacer hover
+        border-color: variables.$middle-coffee; // El borde cambia de color al pasar el mouse
+        
+        // Sombra mucho más marcada en hover para dar sensación de altura real
+        box-shadow: 
+            0 20px 40px rgba(variables.$black-coffee, 0.12),
+            0 5px 10px rgba(variables.$middle-coffee, 0.05);
+            
+        .avatar {
+            background: variables.$middle-coffee;
+            transform: scale(1.05);
+        }
+    }
+
+    .comment-header h4 {
+        max-width: 70%;          
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .comment-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(variables.$black-coffee, 0.05); // Línea divisoria interna
+        padding-bottom: 1rem;
+
+        
+        .arrow {
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+        .avatar {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: variables.$black-coffee;
+            color: variables.$white;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .user-meta {
+            h4 {
+                margin: 0;
+                color: variables.$black-coffee;
+                font-size: 1.1rem;
+            }
+            span {
+                font-size: 0.75rem;
+                color: variables.$middle-coffee;
+                font-weight: 700;
+            }
+        }
+    }
+
+    p {
+        margin: 0;
+        color: #2c2c2c; // Texto un poco más oscuro para que se lea mejor
+        line-height: 1.6;
+        font-style: italic;
+    }
+}

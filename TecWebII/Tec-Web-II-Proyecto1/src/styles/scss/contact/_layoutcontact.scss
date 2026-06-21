@@ -1,0 +1,98 @@
+@use '../mixins';
+@use '../variables';
+
+
+.comments-container {
+    background: #f5f2ee;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    max-height: 620px; // Altura fija para permitir el scroll
+    overflow-y: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.empty-msg {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 2rem 0;
+}
+.error-msg {
+    display: block;
+    color: red;
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+}
+
+.contact-main {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: 
+        radial-gradient(at 0% 0%, rgba(variables.$middle-coffee, 0.08) 0, transparent 45%),
+        radial-gradient(at 100% 100%, rgba(variables.$black-coffee, 0.05) 0, transparent 45%),
+        #fdfbf9;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -25%;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        opacity: 0.025;
+        pointer-events: none;
+    }
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 0.5rem 1.5rem;
+    max-width: 90rem;
+    margin: 0 auto; // Sube el contenido sin mover el fondo
+    position: relative;
+    z-index: 2;
+
+    @include mixins.respond-to(tablet) {
+        padding: 4rem 3rem;
+    }
+
+    @include mixins.respond-to(desktop) {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr; // Columna derecha un poco más ancha para las tarjetas
+        gap: 6rem; 
+        padding: 10rem 2rem 6rem;
+        align-items: start;
+    }
+}
+
+.contact-left {
+    @include mixins.respond-to(desktop) {
+        position: sticky;
+        top: 10rem;
+    }
+}
+
+.contact-right {        
+    @include mixins.respond-to(desktop) {
+        padding: 3rem;
+    }
+}
+
+.fade-up {
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

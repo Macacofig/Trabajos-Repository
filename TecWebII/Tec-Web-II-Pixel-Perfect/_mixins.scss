@@ -1,0 +1,23 @@
+// Definición de medidas según dispositivo
+$breakpoint-mobile-sm: 480px;
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+$breakpoint-laptop: 1280px;
+
+@mixin respond-to($device) {
+    @if $device == "mobile-sm" {
+        @media (max-width: $breakpoint-mobile-sm) { @content; }
+    }
+    @else if $device == "mobile" {
+        @media (max-width: $breakpoint-mobile) { @content; }
+    }
+    @else if $device == "tablet" {
+        @media (max-width: $breakpoint-tablet) { @content; }
+    }
+    @else if $device == "laptop" {
+        @media (max-width: $breakpoint-laptop) { @content; }
+    }
+    @else if $device == "desktop" {
+        @media (min-width: #{$breakpoint-laptop + 1px}) { @content; }
+    }
+}

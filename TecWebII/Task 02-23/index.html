@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- =========================
+         NAV FIJO (position: fixed)
+    ========================== -->
+    <nav class="menu">
+        <!-- Enlaces en línea (inline) pero convertidos a inline-block en CSS -->
+        <a href="#inicio">Inicio</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header id="inicio">
+        <h1 id="titulo">Mi Portafolio Profesional</h1>
+        <p class="subtitulo">Diseño moderno y desarrollo web</p>
+    </header>
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+    <main>
+
+        <!-- PRESENTACIÓN -->
+        <section class="seccion">
+            <article>
+                <h2>Bienvenido</h2>
+                <p>
+                    Soy desarrollador web especializado en creación de sitios
+                    modernos, adaptables y funcionales.
+                </p>
+            </article>
+        </section>
+
+        <!-- PROYECTOS (FLEXBOX OBLIGATORIO) -->
+        <section id="proyectos" class="seccion">
+            <h2 class="titulo-seccion">PROYECTOS</h2>
+
+            <!-- Contenedor flex -->
+            <div class="contenedor-flex">
+
+                <div class="tarjeta">
+                    <h3>Proyecto 1</h3>
+                    <p>Web corporativa profesional.</p>
+                    <button>Ver más</button>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Proyecto 2</h3>
+                    <p>Tienda online adaptable.</p>
+
+                    <!-- Elemento oculto con display: none -->
+                    <p class="oculto">
+                        Información adicional que no se muestra porque
+                        tiene display: none y desaparece del flujo.
+                    </p>
+
+                    <button>Ver más</button>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Proyecto 3</h3>
+                    <p>Aplicación educativa interactiva.</p>
+                    <button>Ver más</button>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Proyecto 4</h3>
+                    <p>Página web responsive.</p>
+                    <button>Ver más</button>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Proyecto 5</h3>
+                    <p>Aplicación comercial con funcionalidades avanzadas.</p>
+                    <button>Ver más</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SOBRE MI -->
+        <section id="sobre-mi" class="seccion">
+            <article>
+                <h2>Sobre mí</h2>
+                <br>
+                <p> 
+                    Soy un desarrollador web apasionado por crear experiencias digitales
+                    atractivas y funcionales. Con años de experiencia en el campo,
+                    Me especializo en estructura semántica correcta,
+                    diseño visual y experiencia de usuario.
+                </p>
+                <br>
+                <p>
+                    Ademas tengo conocmientos en el manejo de herramientas de diseño
+                    como Adobe XD, Figma y Photoshop, lo que me permite crear diseños visuales atractivos
+                </p>
+                <p> 
+                    Mi objetivo es ayudar a las empresas a destacar en línea
+                    mediante la creación de sitios web modernos, adaptables y optimizados.
+                </p>
+                <br>
+                <p>
+                    Estoy comprometido con la calidad, la innovación y la satisfacción del cliente,
+                    siempre buscando superar las expectativas en cada proyecto.
+                </p>
+            </article>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="seccion">
+            <article class="servicios">
+                <h2>Servicios</h2>
+                <ul>
+                    <li>Desarrollo de páginas web</li>
+                    <li>Diseño adaptable</li>
+                    <li>Optimización visual</li>
+                </ul>
+            </article>
+            <article class="habilidades">
+                <h2>Habilidades</h2>
+                <ul>
+                    <li>HTML5 semántico</li>
+                    <li>CSS profesional</li>
+                    <li>Manejo de Bases de datos SQL</li>
+                    <li>Experiencia en desarrollo de proyectos</li>
+                    <li>Backend con Node.js</li>
+                    <li>Fronend con React y Angular</li>
+                </ul>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer id="contacto">
+        <p>Email: omkfig@gmail.com</p>
+        <p>Teléfono: +591 60399110</p>
+        <p>© 2026 Mi Portafolio Profesional</p>
+    </footer>
+
+</body>
+</html>

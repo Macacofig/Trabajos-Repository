@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #121212;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.register-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.register-card {
+    background: #1A1A1A;
+    border: 3px solid #FE8330;
+    box-shadow: 10px 10px 0px #FE8330;
+    padding: 40px 40px;
+    width: 420px;
+}
+
+.register-card h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: #FE8330;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.register-card p.subtitle {
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+#registerForm label {
+    display: block;
+    font-size: 12px;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+#registerForm input,
+#registerForm select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 4px;
+    border: 2px solid #333;
+    background: #111;
+    color: #F4F4F0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: border-color 0.2s;
+    outline: none;
+}
+
+#registerForm select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#registerForm select option {
+    background: #111;
+    color: #F4F4F0;
+}
+
+#registerForm input:focus,
+#registerForm select:focus {
+    border-color: #FE8330;
+}
+
+#registerForm input.input-error {
+    border-color: #e74c3c;
+}
+
+.hidden {
+    display: none;
+}
+
+.message-box {
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.message-box.error {
+    display: block;
+    color: #e74c3c;
+    border: 2px dashed #e74c3c;
+}
+
+.message-box.success {
+    display: block;
+    color: #2ecc71;
+    border: 2px solid #2ecc71;
+}
+
+.register-btn {
+    width: 100%;
+    background: #FE8330;
+    color: #111;
+    padding: 16px;
+    border: 2px solid #FE8330;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    transition: 0.1s;
+    margin-top: 5px;
+}
+
+.register-btn:hover {
+    background: #111;
+    color: #FE8330;
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0px #FE8330;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.login-link a {
+    color: #FE8330;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

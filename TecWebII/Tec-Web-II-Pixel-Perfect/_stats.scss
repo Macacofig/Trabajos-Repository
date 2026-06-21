@@ -1,0 +1,68 @@
+@use 'variables';
+@use 'mixins';
+
+.stats {
+    padding: 110px 0;
+    background-image: url('recursos/background.png');
+    background-size: cover;
+    background-position: center;
+    color: variables.$white;
+
+    @include mixins.respond-to(tablet) {
+        padding: 80px 0;
+    }
+
+    @include mixins.respond-to(mobile) {
+        padding: 60px 0;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: variables.$container-max-width;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        @include mixins.respond-to(tablet) {
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        @include mixins.respond-to(mobile) {
+            flex-direction: column;
+            gap: 35px;
+        }
+    }
+
+    &__item {
+        text-align: center;
+
+        span {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-family:'Nunito-Bold', sans-serif;
+
+            @include mixins.respond-to(mobile) {
+                font-size: 1rem;
+            }
+        }
+
+        h2 {
+            font-family:'Nunito-Bold', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0;
+
+            @include mixins.respond-to(tablet) {
+                font-size: 3rem;
+            }
+
+            @include mixins.respond-to(mobile) {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@use 'home/navbar';
+@use 'home/hero';
+@use 'home/about';
+@use 'home/features';
+@use 'home/footer';
+@use 'products/modal';
+@use 'products/products-header';
+@use 'products/carousel';
+@use 'contact/form';
+@use 'contact/comentaries';
+@use 'contact/layoutcontact';
+@use 'contact/location-section';
+@use 'contact/footer1';
+
+
+@use 'variables';
+@use 'sass:color';
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    
+    background-color: variables.$black-coffee;
+    color: variables.$white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 1000;
+    
+    // Estado inicial: Oculto
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(1.25rem); 
+    
+    transition: 
+        opacity 0.4s ease, 
+        visibility 0.4s ease, 
+        transform 0.4s ease, 
+        background-color 0.3s ease;
+        
+    box-shadow: 0 0.25rem 0.9rem rgba(0, 0, 0, 0.3);
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &:hover {
+        background-color: color.adjust(variables.$black-coffee, $lightness: 10%);
+        transform: scale(1.1);
+    }
+
+    /* --- AJUSTES RESPONSIVOS --- */
+    @media (max-width: 30rem) 
+    { 
+        bottom: 5.9rem;
+        right: 1.5rem;
+        width: 3rem;  
+        height: 3rem;
+        font-size: 1.25rem;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}

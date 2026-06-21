@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscripciones</title>
+  <link rel="stylesheet" href="../styles/css/main.css">
+</head>
+
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <h2>Académico</h2>
+    <nav>
+      <a href="./index.html">Inicio</a>
+      <a href="./estudiantes.html">Estudiantes</a>
+      <a href="./cursos.html">Cursos</a>
+      <a href="./inscripciones.html" class="active">Inscripciones</a>
+      <a href="./dashboard.html">Dashboard</a>
+    </nav>
+
+    <button id="toggle-dark" class="btn dark-toggle"> Modo oscuro</button>
+  </aside>
+  <script type="module" src="/dist/UI/main.js"></script>
+  <main class="main">
+    <h1>Gestión de Inscripciones</h1>
+
+    <!-- MENSAJE -->
+    <div id="message" class="message"></div>
+
+    <section class="panel-container">
+
+      <!-- ESTUDIANTES -->
+      <div class="panel">
+        <h3>Estudiantes</h3>
+
+        <div class="search-box">
+          <input id="search-student" placeholder="Buscar..." />
+          <button class="btn primary" id="btn-search-student">Buscar</button>
+          <button class="btn ghost" id="clear-student">Limpiar</button>
+        </div>
+
+        <div id="list-students" class="list"></div>
+      </div>
+
+      <!-- CURSOS -->
+      <div class="panel">
+        <h3>Cursos</h3>
+
+        <div class="search-box">
+          <input id="search-subject" placeholder="Buscar..." />
+          <button class="btn primary" id="btn-search-subject">Buscar</button>
+          <button class="btn ghost" id="clear-subject">Limpiar</button>
+        </div>
+
+        <div id="list-subjects" class="list"></div>
+      </div>
+
+      <!-- ACCIONES -->
+      <div class="panel actions">
+        <button id="btn-inscribir" class="btn success">Inscribir</button>
+      </div>
+
+    </section>
+
+    <!-- FILTROS -->
+    <section class="filters">
+      <input id="search-ins-student" placeholder="Buscar estudiante">
+      <input id="search-ins-subject" placeholder="Buscar curso">
+      <button class="btn primary" id="btn-search-ins">Buscar</button>
+      <button class="btn ghost" id="clear-ins">Limpiar</button>
+    </section>
+
+    <!-- TABLA -->
+    <table>
+      <thead>
+        <tr>
+          <th>Estudiante</th>
+          <th>Carrera</th>
+          <th>Curso</th>
+          <th>Docente</th>
+          <th>Fecha</th>
+          <th>Estado</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody id="table"></tbody>
+    </table>
+
+  </main>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Confirmar eliminación</h3>
+    <p id="modal-text">¿Seguro que quieres eliminar?</p>
+
+    <div class="modal-actions">
+      <button id="modal-cancel" class="btn ghost">Cancelar</button>
+      <button id="modal-confirm" class="btn danger">Eliminar</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="/dist/UI/Inscriptions.render.js"></script>
+</body>
+</html>

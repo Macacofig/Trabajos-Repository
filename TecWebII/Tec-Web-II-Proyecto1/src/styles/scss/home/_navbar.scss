@@ -1,0 +1,128 @@
+@use '../variables';
+
+.navbar {
+    width: 100%;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 5%; 
+    
+    background-color: rgba(variables.$black-coffee, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(variables.$white, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* LOGO */
+    &__logo a {
+        color: variables.$white;
+        text-decoration: none;
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-family: serif; 
+    }
+
+    /* LISTA */
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li a {
+            text-decoration: none;
+            color: rgba(variables.$white, 0.7);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px; 
+            transition: all 0.3s ease;
+            position: relative;
+
+            &:hover {
+                color: variables.$white;
+                background-color: rgba(variables.$white, 0.1);
+            }
+
+            &.active {
+                color: variables.$white;
+                background-color: rgba(variables.$white, 0.15);
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/*  TABLET & MOBILE:  */
+@media (max-width: 1024px) {
+    .nav {
+        
+        top: auto;
+        bottom: 1.5rem; 
+        left: 50%;
+        transform: translateX(-50%);
+        
+        width: 90%;
+        max-width: 400px;
+        height: 65px;
+        padding: 0 1rem;
+        border-radius: 100px; 
+        border: 1px solid rgba(variables.$white, 0.1);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        
+        justify-content: center; 
+
+        &__logo {
+            display: none; 
+        }
+
+        &__list {
+            width: 100%;
+            justify-content: space-around;
+            gap: 5px;
+
+            li {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 0.75rem;
+                    width: 100%;
+                    padding: 0.8rem 0;
+                    border-radius: 100px;
+
+                    &.active {
+                        background-color: variables.$white;
+                        color: variables.$black-coffee;
+                        font-weight: 700;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                        
+                        &::after { 
+                            display: none; 
+                        } 
+                    }
+                }
+            }
+        }
+    }
+}

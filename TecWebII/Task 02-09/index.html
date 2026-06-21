@@ -1,0 +1,250 @@
+<!-- Requisito 1: DOCTYPE HTML5, html lang es, head, meta, title, body -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Educativo Web</title>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<!-- Requisito 2: Header -->
+<header>
+    <!-- Requisito 4 : h1 -->
+    <h1>Portal Educativo de Tecnologías Web</h1>
+
+    <!-- Requisito 3: navegación interna con anclas -->
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#noticias">Noticias</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#tabla">Tabla</a>
+        <a href="#multimedia">Multimedia</a>
+        <a href="#formulario">Formulario</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<!-- ================= MAIN ================= -->
+<!-- Requisito 2: Main -->
+<main>
+    <!-- Requisito 2: Sections -->
+
+    <!-- ========== SECCIÓN INICIO ========== -->
+    <!-- Requisitos 3, 4 y 5 -->
+    <section id="inicio">
+        <!-- Requisito 4 : h2 -->
+        <h2>Inicio</h2>
+
+        <!-- Requisito 4: p , strong, em -->
+        <p>Bienvenido a nuestro portal de <strong>educación digital</strong>.</p>
+        <p>Aprender desarrollo web es <em>esencial</em> hoy en día.</p>
+        <p>Conocer las tecnologías web es fundamental para el <strong>crecimiento profesional</strong>.</p>
+        <p>Te invitamos a explorar nuestro contenido educativo y conocer el mundo web</p>
+        <p>Conviertete en un experto en <em>desarrollo web</em></p>
+        <p>Crea tus <em>propios proyectos web</em></p>
+        <p>Lleva tus ideas al mundo digital</p>
+        <p><strong>Todo lo que necesitas para comenzar tu carrera en desarrollo web</strong></p>
+
+        <!-- Requisito 5: figure con imagen -->
+        <figure>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+                 alt="Logotipo de HTML5"
+                 width="200">
+            <figcaption>Logotipo oficial de HTML5</figcaption>
+        </figure>
+    </section>
+
+    <!-- ========== SECCIÓN NOTICIAS ========== -->
+    <!-- Requisitos 2: Articles -->
+    <section id="noticias">
+        <h2>Noticias</h2>
+
+        <article>
+            <!-- Requisito 4 : h3 -->
+            <h3>HTML5 en evolución</h3>
+            <p>Las nuevas APIs mejoran la experiencia web.</p>
+        </article>
+
+        <article>
+            <h3>Accesibilidad</h3>
+            <p>La web accesible es <strong>prioritaria</strong>.</p>
+        </article>
+    </section>
+
+    <!-- ========== SECCIÓN RECURSOS ========== -->
+    <!-- Requisito 6: listas ordenadas y desordenadas -->
+    <section id="recursos">
+        <h2>Recursos</h2>
+
+        <ol>
+            <li>Instalar editor</li>
+            <li>Aprender HTML</li>
+            <li>Aprender CSS</li>
+            <li>Aprender JavaScript</li>
+            <li>Crear proyectos</li>
+        </ol>
+
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Git</li>
+            <li>SEO</li>
+            <li>Accesibilidad</li>
+        </ul>
+    </section>
+
+    <!-- ========== SECCIÓN TABLA ========== -->
+    <!-- Requisito 7: tabla con th y mínimo 8 filas -->
+    <section id="tabla">
+        <h2>Horario de Clases</h2>
+
+        <table border="1">
+            <tr>
+                <th>Día</th>
+                <th>Actividad</th>
+                <th>Hora</th>
+                <th>Lugar</th>
+            </tr>
+            <tr>
+                <td>Lunes</td>
+                <td>HTML</td>
+                <td>09:00</td>
+                <td>Aula 1</td>
+            </tr>
+            <tr>
+                <td>Martes</td>
+                <td>CSS</td>
+                <td>10:00</td>
+                <td>Aula 2</td>
+            </tr>
+            <tr>
+                <td>Miércoles</td>
+                <td>JS</td>
+                <td>11:00</td>
+                <td>Aula 3</td>
+            </tr>
+            <tr>
+                <td>Jueves</td>
+                <td>Git</td>
+                <td>12:00</td>
+                <td>Aula 4</td>
+            </tr>
+            <tr>
+                <td>Viernes</td>
+                <td>Proyecto</td>
+                <td>13:00</td>
+                <td>Aula 5</td>
+            </tr>
+            <tr>
+                <td>Sábado</td>
+                <td>Práctica</td>
+                <td>10:00</td>
+                <td>Lab</td>
+            </tr>
+            <tr>
+                <td>Domingo</td>
+                <td>Repaso</td>
+                <td>09:00</td>
+                <td>Online</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- ========== SECCIÓN MULTIMEDIA ========== -->
+    <!-- Requisitos 8 y 9: video + iframe -->
+    <section id="multimedia">
+        <h2>Multimedia</h2>
+
+        <video controls width="400">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Tu navegador no soporta video HTML5.
+        </video>
+
+        <iframe width="400"
+                height="250"
+                src="https://www.youtube.com/embed/UB1O30fR-EE"
+                title="Curso HTML5 en YouTube">
+        </iframe>
+    </section>
+
+    <!-- ========== SECCIÓN FORMULARIO ========== -->
+    <!-- Requisito 10: formulario completo sin br -->
+    <section id="formulario">
+        <h2>Registro</h2>
+
+        <form action="https://example.com/registro" method="post">
+            <p>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+            </p>
+
+            <p>
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo">
+            </p>
+
+            <p>
+                <label for="clave">Contraseña:</label>
+                <input type="password" id="clave" name="clave">
+            </p>
+
+            <p>
+                Sexo:
+                <label><input type="radio" name="sexo" value="masculino"> Masculino</label>
+                <label><input type="radio" name="sexo" value="femenino"> Femenino</label>
+            </p>
+
+            <p>
+                <label for="pais">País:</label>
+                <select id="pais" name="pais">
+                    <option>España</option>
+                    <option>México</option>
+                    <option>Argentina</option>
+                    <option>Colombia</option>
+                    <option>Bolivia</option>
+                </select>
+            </p>
+
+            <p>
+                <label><input type="checkbox" name="terminos"> Acepto los términos</label>
+            </p>
+
+            <p>
+                <button type="submit">Registrarme</button>
+            </p>
+        </form>
+    </section>
+
+    <!-- ========== SECCIÓN CONTACTO ========== -->
+    <!-- Requisito 3: navegación interna -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Ir a la <a href="contacto.html">página de contacto</a>.</p>
+    </section>
+
+</main>
+
+<!-- ================= ASIDE ================= -->
+<!-- Requisito 11 -->
+<aside>
+    <h3>Consejos</h3>
+    <ul>
+        <li>Practica cada día</li>
+        <li>Lee documentación oficial</li>
+        <li>Usa semántica HTML</li>
+    </ul>
+    <p><em>La constancia</em> marca la diferencia.</p>
+</aside>
+
+<!-- ================= FOOTER ================= -->
+<!-- Requisito 12 -->
+<footer>
+    <p>© 2026 Portal Educativo Web</p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">Sitio recomendado</a></p>
+    <p>Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

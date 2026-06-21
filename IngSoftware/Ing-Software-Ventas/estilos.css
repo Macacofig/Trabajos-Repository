@@ -1,0 +1,192 @@
+/* --- Variables de Color --- */
+:root {
+  --primary-color: #4f46e5; /* Indigo moderno */
+  --primary-hover: #4338ca;
+  --bg-color: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-main: #1f2937;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --success-color: #10b981;
+}
+
+/* --- Reset Básico --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  /* Fondo con un degradado sutil */
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* --- Contenedor Principal --- */
+.contenedor {
+  background: var(--card-bg);
+  width: 100%;
+  max-width: 450px; /* Un poco más ancho para mejor lectura */
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* --- Header --- */
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 28px;
+  color: var(--text-main);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* --- Formulario --- */
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-left: 4px;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 15px;
+  color: var(--text-main);
+  background-color: #fff;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* Efecto al hacer foco en inputs */
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* --- Botón --- */
+.boton {
+  margin-top: 10px;
+}
+
+.calcular {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+}
+
+.calcular:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(79, 70, 229, 0.3);
+}
+
+.calcular:active {
+  transform: translateY(0);
+}
+
+/* --- Resultados --- */
+.resultados {
+  background-color: #f9fafb;
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.resultados h3 {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.resultado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--text-main);
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.resultado:last-child {
+  border-bottom: none;
+}
+
+.resultado .label {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.resultado .valor {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Estilo especial para el Total Final */
+.resultado.total {
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 2px solid var(--primary-color);
+  border-bottom: none;
+}
+
+.resultado.total .label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.resultado.total .valor {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary-color);
+}

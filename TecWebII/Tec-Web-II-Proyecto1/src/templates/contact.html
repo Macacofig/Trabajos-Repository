@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <meta name="description" content="Cafresso - Coffee bar experience with artisan drinks and cozy atmosphere">
+    <link rel="stylesheet" href="../styles/css/main.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <nav class="nav" aria-label="Main navigation">
+            <div class="nav__logo">
+                <a href="index.html">Cafresso</a>
+            </div>
+            <ul class="nav__list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Products</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-main">
+        <div class="contact-content fade-up"> 
+            
+            <aside class="contact-left">
+                <section class="form-section">
+                    <h2>Get in Touch</h2>
+                    <p>Share your thoughts with us; your opinion matters and helps us grow the ritual.</p>
+
+                    <div class="form-container">
+                        <form id="contact-form" action="#" method="post">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="e.g. John Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reason">Your Message</label>
+                                <textarea id="reason" name="message" placeholder="What's on your mind?..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-submit">Send Message</button>
+                        </form>
+                </section>
+            </aside>
+
+            <section class="contact-right">
+                <h2>Community Rituals</h2>
+                
+                <div class="comments-container" id="comments-list"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <section class="location-section">
+        <div class="location-container">
+            <div class="map-placeholder">
+                <div class="map-overlay"></div>
+                <div class="map-pin">
+                    <span class="pin-dot"></span>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <span class="location-tag">Visit Us</span>
+                <h3>Our Location</h3>
+                <p>123 Coffee Street, Coffee District<br>Cochabamba, Bolivia</p>
+                <div class="location-details">
+                    <span><strong>Mon–Fri:</strong> 09:00 AM – 08:00 PM</span>
+                    <span><strong>Sat–Sun:</strong> 09:00 AM – 06:00 PM</span>
+                </div>
+                <a href="#" class="btn-directions">View on Google Maps</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Cafresso Rituals. All rights reserved.</p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Volver al inicio">
+        &#8593;
+    </button>
+
+    <script src="../functions/Contact/contact.js" defer></script>
+    <script src="../functions/Contact/contact-presenter.js" defer></script>
+    <script src="../functions/Home/navbar.js" defer></script>
+    <script src="../functions/Contact/location.js" defer></script>
+
+</body>
+</html>

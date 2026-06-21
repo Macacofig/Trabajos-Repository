@@ -1,0 +1,283 @@
+:root {
+  --primary: #FE8330;
+  --soft: #FFD8B1;
+  --success: #2ecc71;
+  --error: #e74c3c;
+  --dark: #2c3e50;
+}
+
+
+
+/* HEADER */
+.topbar {
+  margin-bottom: 30px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  color: #F4F4F0;
+  letter-spacing: 2px;
+}
+
+.topbar p {
+  color: #aaa;
+}
+
+/* CONTENEDOR */
+.reports-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* CARD */
+.report-card {
+  background: #1E1E1E;
+  border-radius: 8px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+  overflow: hidden;
+  border: 3px solid #333;
+}
+
+.report-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px #FE8330;
+  border-color: #FE8330;
+}
+
+/* HEADER CARD */
+.report-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* INFO */
+.report-info {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.info-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 12px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+
+.value {
+  font-weight: 600;
+  color: #F4F4F0;
+  font-size: 1.1rem;
+}
+
+/* STATUS */
+.status {
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.pending {
+  background: transparent;
+  border: 2px dashed var(--error);
+  color: var(--error);
+}
+
+.completed {
+  background: transparent;
+  border: 2px solid var(--success);
+  color: var(--success);
+}
+
+/* BOTÓN */
+.complete-btn {
+  border: 2px solid var(--primary);
+  background: var(--primary);
+  color: #111;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+.complete-btn:hover {
+  background: #111;
+  color: var(--primary);
+}
+
+/* DESCRIPCIÓN */
+.report-description {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 2px dashed #444;
+  display: none;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* EXPANDIDA */
+.report-card.expanded .report-description {
+  display: block;
+}
+
+.empty-state {
+  background: #1E1E1E;
+  border-radius: 8px;
+  padding: 60px 30px;
+  text-align: center;
+  color: #aaa;
+  border: 3px dashed #444;
+}
+
+.empty-state h2 {
+  margin: 0;
+  color: #F4F4F0;
+  font-size: 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+.empty-state p {
+  margin-top: 10px;
+  color: #888;
+}
+
+/* =========================
+   FILTROS
+========================= */
+
+.filters-section {
+  margin-bottom: 25px;
+}
+
+.filters-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  background: #1A1A1A;
+  padding: 20px;
+  border-radius: 8px;
+  border: 3px solid #FE8330;
+  box-shadow: 6px 6px 0px #111;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 180px;
+}
+
+.filter-group label {
+  color: #aaa;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 12px;
+  border-radius: 4px;
+  border: 2px solid #444;
+  background: #111;
+  color: #F4F4F0;
+  font-family: inherit;
+  outline: none;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  border-color: #FE8330;
+}
+
+.filter-btn {
+  align-self: flex-end;
+  padding: 12px 22px;
+  border: 2px solid #FE8330;
+  border-radius: 4px;
+  background: #FE8330;
+  color: #111;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filter-btn:hover {
+  background: #111;
+  color: #FE8330;
+}
+
+.clear-btn {
+  align-self: flex-end;
+  padding: 12px 20px;
+  border: 2px dashed #e74c3c;
+  border-radius: 4px;
+  background: transparent;
+  color: #e74c3c;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.clear-btn:hover {
+  background: #e74c3c;
+  color: #111;
+}
+
+/* RESPONSIVIDAD MÓVIL PARA REPORTES */
+@media (max-width: 768px) {
+  .topbar h1 {
+    font-size: 2rem;
+  }
+  
+  .filters-container {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .filter-group {
+    min-width: 100%;
+  }
+  
+  .filter-btn, .clear-btn {
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .report-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .report-info {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .complete-btn {
+    width: 100%;
+  }
+}

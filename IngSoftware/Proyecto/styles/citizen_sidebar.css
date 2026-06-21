@@ -1,0 +1,197 @@
+/* src/styles/citizen_sidebar.css */
+
+/* CITIZEN: Naranja Corporativo Brutalista */
+.sidebar.citizen-theme {
+  background: #FE8330; /* Naranja Sólido */
+  color: #111;
+  border-right: 4px solid #111;
+  border-radius: 0;
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
+  height: 100vh; /* Ocupa todo el alto */
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.sidebar.citizen-theme.collapsed {
+  width: 85px;
+  min-width: 85px;
+  max-width: 85px;
+}
+
+.sidebar-inner {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Botón Flotante Brutalista */
+.toggle-btn {
+  position: absolute;
+  top: 60px;
+  right: -20px;
+  width: 40px;
+  height: 40px;
+  background: #111;
+  border: 4px solid #FE8330;
+  border-radius: 0;
+  cursor: pointer;
+  z-index: 10;
+  color: #FE8330;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.sidebar.citizen-theme.collapsed .toggle-btn {
+  transform: rotate(180deg);
+}
+
+/* Perfil de Usuario */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.sidebar.citizen-theme.collapsed .user-info,
+.sidebar.citizen-theme.collapsed .text,
+.sidebar.citizen-theme.collapsed .menu-label {
+  display: none;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 0;
+  border: 3px solid #111;
+  flex-shrink: 0;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-role {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.user-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Menú */
+.menu-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  display: block;
+  letter-spacing: 1px;
+  color: #111;
+  border-bottom: 4px solid #111;
+  padding-bottom: 5px;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 2px dashed #111;
+}
+
+.menu-item a {
+  color: #111;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.menu-item:hover {
+  background: #111;
+}
+.menu-item:hover a {
+  color: #FE8330;
+}
+
+.menu-item.active {
+  background: #111;
+}
+.menu-item.active a {
+  color: #FE8330;
+}
+
+/* =========================================
+   RESPONSIVIDAD (Tablets y Móviles)
+========================================= */
+@media (max-width: 1024px) {
+  .sidebar.citizen-theme {
+    position: relative;
+    z-index: 100;
+  }
+
+  .sidebar.citizen-theme.collapsed {
+    transform: none;
+    width: 85px;
+    min-width: 85px;
+    max-width: 85px;
+  }
+
+  .sidebar.citizen-theme.collapsed .toggle-btn {
+    right: -15px;
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar.citizen-theme {
+    position: fixed !important;
+    left: -100%;
+    top: 0;
+    height: 100vh !important;
+    z-index: 1000 !important;
+    border-radius: 0;
+    width: 280px !important;
+    max-width: 280px !important;
+    min-width: 280px !important;
+    transition: left 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+    background: rgba(18, 18, 18, 0.95); /* Menos transparente en móvil para legibilidad */
+  }
+
+  .sidebar.citizen-theme.mobile-open {
+    left: 0;
+  }
+
+  /* Ocultamos el botón de colapsar en móviles porque usamos el hamburguesa */
+  .sidebar.citizen-theme .toggle-btn {
+    display: none !important;
+  }
+}

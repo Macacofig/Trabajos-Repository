@@ -1,0 +1,217 @@
+@use 'variables';
+@use 'mixins';
+
+.testimonials {
+    padding: 100px 0;
+    background-color: #fff; 
+
+    @include mixins.respond-to(tablet) {
+        padding: 80px 0;
+    }
+
+    @include mixins.respond-to(mobile) {
+        padding: 60px 0;
+    }
+
+    &__container {
+        display: flex;
+        max-width: variables.$container-max-width; 
+        margin: 0 auto;
+        padding: 0 40px; 
+
+        gap: 100px; 
+        align-items: flex-start;
+
+        @include mixins.respond-to(tablet) {
+            gap: 60px;
+            padding: 0 30px; 
+        }
+
+        @include mixins.respond-to(mobile) {
+            flex-direction: column;
+            gap: 50px;
+            padding: 0 20px; 
+        }
+    }
+
+    &__info {
+        flex: 1;
+        position: sticky; 
+        top: 120px;
+        
+        @include mixins.respond-to(tablet) {
+            margin-left: 50px;
+            max-width: 500px;
+        }
+
+        @include mixins.respond-to(mobile) {
+            position: static;
+            margin-left: 0; 
+            max-width: 100%;
+        }
+
+        h2 {
+            font-family: 'Roboto-normal', sans-serif;
+            font-size: 3.2rem;
+            color: variables.$text-dark;
+            line-height: 1.1;
+            margin-bottom: 25px;
+
+            @include mixins.respond-to(tablet) {
+                font-size: 2.6rem;
+            }
+
+            @include mixins.respond-to(mobile) {
+                font-size: 2.2rem;
+            }
+        }
+
+        p {
+            font-family: 'Rubik-normal', sans-serif;
+            color: variables.$text-gray;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+
+            @include mixins.respond-to(mobile) {
+                font-size: 1rem;
+                margin-bottom: 30px;
+            }
+        }
+
+        .testimonials__actions {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            @include mixins.respond-to(mobile) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .btn--outline {
+                padding: 15px 30px;
+                border: 1px solid variables.$primary-blue;
+                color: variables.$primary-blue;
+                background: transparent;
+                border-radius: 6px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: 0.3s;
+                font-family: 'Rubik-normal', sans-serif;
+
+                @include mixins.respond-to(mobile) {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                &:hover {
+                    background: variables.$primary-blue;
+                    color: white;
+                }
+            }
+
+            .link-all {
+                text-decoration: none;
+                color: variables.$text-dark;
+                font-weight: 700;
+                font-size: 1rem;
+                font-family: 'Rubik-normal', sans-serif;
+            }
+        }
+    }
+
+    &__list {
+        flex: 1.2;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @include mixins.respond-to(mobile) {
+            gap: 25px;
+        }
+    }
+
+
+    
+    .testimonial-card {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.5s ease;
+        padding: 35px;
+        border: 1.5px solid #f0f0f0; 
+        border-radius: 12px;
+        background: #fff;
+        transition: transform 0.3s ease;
+
+        @include mixins.respond-to(mobile) {
+            padding: 25px;
+        }
+
+        &.featured {
+            border-color: #FFBDAD; 
+            box-shadow: 0 10px 30px rgba(255, 189, 173, 0.1);
+        }
+
+        .stars {
+            color: #FF9F43; 
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-family: 'Rubik-normal', sans-serif;
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.5;
+            margin-bottom: 25px;
+
+            @include mixins.respond-to(mobile) {
+                font-size: 0.95rem;
+            }
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            img {
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                object-fit: cover;
+
+                @include mixins.respond-to(mobile) {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+
+            .user-info {
+                strong {
+                    display: block;
+                    font-size: 1.05rem;
+                    color: variables.$text-dark;
+                }
+
+                span {
+                    font-size: 0.85rem;
+                    color: variables.$text-gray;
+                }
+            }
+        }
+    }
+    
+    .testimonial-card.hidden {
+        opacity: 0;
+        transform: translateY(40px);
+        pointer-events: none;
+        display: none;
+    }
+    
+    .testimonials__list {
+        position: relative;
+    }
+}

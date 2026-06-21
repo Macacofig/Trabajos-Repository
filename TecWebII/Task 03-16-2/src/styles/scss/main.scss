@@ -1,0 +1,46 @@
+@use 'variables';
+@use 'hero';
+@use 'features';
+@use 'social-proof';
+@use 'needs';
+@use 'stats';
+@use 'screenshots'; 
+@use 'pricing';
+@use 'testimonials';
+@use 'faq';
+@use 'cta-final';
+@use 'footer';
+@use 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: variables.$white;
+}
+
+.persona {
+   
+    transform: translate(630px, -550px);
+    height: 550px;
+    overflow: hidden; 
+
+    /* TABLET */
+    @include mixins.respond-to(tablet) {
+        transform: translate(469px, -500px);
+        height: 400px;
+    }
+
+    /* MOBILE */
+    @include mixins.respond-to(mobile) {
+        transform: translate(370px, -415px);
+        height: 300px;
+    }
+
+    /* MOBILE PEQUEÑO */
+    @include mixins.respond-to(mobile-sm) {
+        display: none;
+    }
+}

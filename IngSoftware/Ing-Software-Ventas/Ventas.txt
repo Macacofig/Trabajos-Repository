@@ -1,0 +1,107 @@
+//-------Mostrar Total respecto a Cantidad y Precio---------//
+(cantidad = 5, precio = 100, estado = UT)
+-> Subtotal: 500
+-> Descuento: 0
+-> Impuesto: 0
+-> Total final: 500
+
+//------------Mostrar Total con un Impuesto UT 6.65%--------------//
+(cantidad = 400, precio = 100, estado = UT)
+-> Subtotal: 40000
+-> Descuento: 0
+-> Total con descuento: 40000
+-> Impuesto (6.65%): 2660
+-> Total final: 42660
+
+//-------------Mostrar Total con un Impuesto NV 8%--------------//
+(cantidad = 80, precio = 100, estado = NV)
+-> Subtotal: 8000
+-> Descuento: 0
+-> Total con descuento: 8000
+-> Impuesto (8%): 640
+-> Total final: 8640
+
+//-------------Mostrar Total con un Impuesto TX 6.25%--------------//
+(cantidad = 10, precio = 80, estado = TX)
+-> Subtotal: 800
+-> Descuento: 0
+-> Total con descuento: 800
+-> Impuesto (6.25%): 50
+-> Total final: 850
+
+//-------------Mostrar Total con un Impuesto AL 4%--------------//
+(cantidad = 40, precio = 100, estado = AL)
+-> Subtotal: 4000
+-> Descuento: 0
+-> Total con descuento: 4000
+-> Impuesto (4%): 160
+-> Total final: 4160
+
+//-------------Mostrar Total con un Impuesto CA 8.25%--------------//
+(cantidad = 150, precio = 100, estado = CA)
+-> Subtotal: 15000
+-> Descuento: 0
+-> Total con descuento: 15000
+-> Impuesto (8.25%): 1237.5
+-> Total final: 16237.5
+
+//-------------Mostrar Total con un Descuento 3%--------------//
+(cantidad = 10, precio = 100, estado = TX)
+-> Subtotal: 1000
+-> Descuento (3%): 30
+-> Total con descuento: 970
+-> Impuesto (6.25%): 60.63
+-> Total final: 1030.63
+
+//-------------Mostrar Total con un Descuento 5%--------------//
+(cantidad = 40, precio = 100, estado = AL)
+-> Subtotal: 4000
+-> Descuento (5%): 200
+-> Total con descuento: 3800
+-> Impuesto (4%): 152
+-> Total final: 3952
+
+//-------------Mostrar Total con un Descuento 7% --------------//
+(cantidad = 80, precio = 100, estado = NV)
+-> Subtotal: 8000
+-> Descuento (7%): 560
+-> Total con descuento: 7440
+-> Impuesto (8%): 595.2
+-> Total final: 8035.2
+
+//-------------Mostrar Total con un Descuento 10% --------------//
+(cantidad = 150, precio = 100, estado = CA)
+-> Subtotal: 15000
+-> Descuento (10%): 1500
+-> Total con descuento: 13500
+-> Impuesto (8.25%): 1113.75
+-> Total final: 14613.75
+
+//-------------Mostrar Total con un Descuento 15%--------------//
+(cantidad = 400, precio = 100, estado = UT)
+-> Subtotal: 40000
+-> Descuento (15%): 6000
+-> Total con descuento: 34000
+-> Impuesto (6.65%): 2261
+-> Total final: 36261
+
+
+//-------- IMPUESTOS POR ESTADO ------------//
+UT  6.65%
+NV  8.00%
+TX  6.25%
+AL  4.00%
+CA  8.25%
+
+
+//--------LIMITES DESCUENTOS--------------//
+(subtotal = 999) -> 0% descuento
+(subtotal = 1000) -> 3% descuento
+(subtotal = 2999) -> 3% descuento
+(subtotal = 3000) -> 5% descuento
+(subtotal = 6999) -> 5% descuento
+(subtotal = 7000) -> 7% descuento
+(subtotal = 9999) -> 7% descuento
+(subtotal = 10000) -> 10% descuento
+(subtotal = 29999) -> 10% descuento
+(subtotal = 30000) -> 15% descuento

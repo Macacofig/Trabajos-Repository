@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Reportes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 1. Estilos base y el CSS modular del Sidebar Ciudadano -->
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/citizen_sidebar.css">
+
+  <!-- Estilo original de esta vista -->
+  <link rel="stylesheet" href="../styles/user_reports.css">
+
+  <!-- Fuentes e Iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<!-- Bloqueamos el flex original del body para que no interfiera con el layout principal -->
+
+<body class="citizen-theme">
+
+  <!-- 2. Envolvemos todo en el layout principal -->
+  <div class="main-layout">
+
+    <!-- 3. AQUÍ SE INYECTA EL SIDEBAR DEL CIUDADANO -->
+    <div id="sidebar-container"></div>
+
+    <!-- 4. Contenedor flexible que centra tu .app-container en el resto de la pantalla -->
+    <main class="content-area">
+      <div class="app-container" style="display: flex; flex-direction: column; width: 100%; max-width: 100%; height: auto;">
+
+        <!-- PANEL IZQUIERDO -->
+        <header class="page-header" style="width: 100%; box-sizing: border-box; margin-bottom: 20px;">
+          <h1>Crear Reporte</h1>
+          <p>Completa los datos para generar un reporte ciudadano de forma rápida y sencilla.</p>
+        </header>
+
+        <!-- PANEL DERECHO -->
+        <div class="form-panel glass-container" style="width: 100%; box-sizing: border-box; box-shadow: none;">
+
+          <form id="reportForm">
+            <div class="form-group">
+              <label for="description">Descripción</label>
+              <input type="text" id="description" name="description" placeholder="Describe el problema">
+            </div>
+
+            <div class="form-group">
+              <label for="location">Ubicación</label>
+              <input type="text" id="location" name="location" placeholder="Ej: Calle 10, Zona Centro">
+            </div>
+
+            <button type="submit" class="btn-submit">Registrar</button>
+          </form>
+
+          <!-- Mensaje dinámico -->
+          <div id="messageBox" class="message-box"></div>
+    </main>
+  </div>
+
+    </div>
+  </div>
+
+  <!-- 5. Llamamos al script que inyecta el sidebar y resalta "Reportar Incidencia" -->
+  <script type="module">
+    // ¡RUTA CORREGIDA AQUÍ!
+    import { loadSidebar } from '../utils/sidebar_loader.js';
+    loadSidebar('citizen', 'menu-citizen-create');
+  </script>
+
+  <!-- Presentador original -->
+  <script type="module" src="../functions/Citizen/Citizen.Report.presenter.js"></script>
+
+</body>
+
+</html>

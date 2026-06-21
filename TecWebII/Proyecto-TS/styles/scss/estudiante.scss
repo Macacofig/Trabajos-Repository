@@ -1,0 +1,309 @@
+@use 'variables' as v;
+
+/* ===== FILTROS ===== */
+
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+
+  input,
+  select {
+    padding: 10px;
+    border-radius: v.$radius;
+    border: 1px solid v.$color-border;
+    background: v.$color-surface;
+    transition: v.$transition;
+  }
+
+  input:focus,
+  select:focus {
+    outline: none;
+    border-color: v.$color-primary;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+  }
+}
+
+/* ===== FORM ===== */
+
+.form {
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  padding: 20px;
+  margin-bottom: 25px;
+
+  background: v.$color-surface;
+  border-radius: v.$radius-lg;
+  box-shadow: v.$shadow-soft;
+
+  /* INPUTS en 2 columnas */
+  label{
+    margin-left: 1%;
+  }
+  input {
+    margin-top: 5%;
+    width: 100%;
+  }
+
+  /* BOTONES abajo */
+  button {
+    width: 100%;
+  }
+
+  /* Fuerza a que los botones estén en nueva fila */
+  button[type="submit"] {
+    grid-column: 1 / 2;
+  }
+
+  button#clear-form {
+    grid-column: 2 / 3;
+  }
+  
+  .field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .field input.error {
+    border: 1px solid #ff4d4d;
+    background: #fff5f5;
+  }
+
+  .field small {
+    color: #ff4d4d;
+    font-size: 12px;
+    height: 14px;
+    margin-top: 2px;
+  }
+}
+
+
+
+/* ===== TABLA ===== */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  background: v.$color-surface;
+  border-radius: v.$radius-lg;
+  overflow: hidden;
+
+  box-shadow: v.$shadow-soft;
+}
+
+.table th,
+.table td {
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.table thead {
+  background: #f8f9fb;
+}
+
+.table th {
+  color: v.$color-text-light;
+}
+
+.table tbody tr {
+  border-top: 1px solid v.$color-border;
+  transition: v.$transition;
+}
+
+.table tbody tr:hover {
+  background: #f1f7ff;
+}
+
+/* ===== ESTADOS ===== */
+
+.estado {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.estado.activo {
+  background: #eafaf1;
+  color: v.$color-success;
+}
+
+.estado.inactivo {
+  background: #fdecea;
+  color: v.$color-danger;
+}
+
+/* ===== BOTONES ===== */
+
+.filters button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: v.$radius;
+  background: v.$color-primary;
+  color: white;
+  cursor: pointer;
+  transition: v.$transition;
+}
+
+.filters button:hover {
+  background: #d5d5d5;
+}
+
+.table button {
+  border: none;
+  padding: 6px 10px;
+  margin-right: 5px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: v.$transition;
+}
+
+.table .edit {
+  background: #f1c40f;
+}
+
+.table .delete {
+  background: v.$color-danger;
+  color: white;
+}
+
+.table .toggle {
+  background: v.$color-success;
+  color: white;
+}
+
+/* ===== SIDEBAR ACTIVE LINK ===== */
+
+.sidebar a.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== DARK MODE ===== */
+
+body.dark {
+
+  .filters input,
+  .filters select {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+  }
+
+  .form {
+    background: #2a2a2a;
+  }
+
+  .form input,
+  .form select {
+    background: #1e1e1e;
+    border: 1px solid #444;
+    color: white;
+  }
+
+  .table {
+    background: #2a2a2a;
+  }
+
+  .table thead {
+    background: #1e1e1e;
+  }
+
+  .table tbody tr:hover {
+    background: #333;
+  }
+
+  .table th {
+    color: #aaa;
+  }
+  
+}
+body.dark .filters button {
+  background: #3a3a3a;
+  color: white;
+}
+
+/* MODAL */
+
+/* ===== MODAL ===== */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  z-index: 101;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  transform: translate(0%, 0%) scale(1);
+  pointer-events: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  min-width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal .danger {
+  background: #e74c3c;
+  color: white;
+}
+
+/* DARK MODE */
+body.dark .modal-content {
+  background: #2a2a2a;
+  color: white;
+}

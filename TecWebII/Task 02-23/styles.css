@@ -1,0 +1,220 @@
+/* =========================
+   RESET + BOX MODEL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    /* border-box hace que padding y border
+       se incluyan dentro del ancho total */
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   NAV FIJO (position: fixed)
+========================= */
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1e3a5f;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+/* 
+   inline-block permite que los enlaces
+   estén en línea (como inline),
+   pero acepten padding y margin vertical
+*/
+.menu a {
+    display: inline-block;
+    margin: 0 1.2rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* PSEUDOCLASES */
+.menu a:hover {
+    color: #ffd700;
+}
+
+.menu a:active {
+    color: #ff4d4d;
+}
+
+.menu a:focus {
+    outline: 2px solid white;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
+    padding: 6rem 2rem 4rem 2rem;
+}
+
+#titulo {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+}
+
+/* =========================
+   SECCIONES
+========================= */
+
+.seccion {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: auto; /* centra el contenido */
+}
+
+#proyectos {
+    background-color: #2a649f;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+#proyectos h2 {
+    color: white;
+}
+
+#sobre-mi
+{
+    background-color: #1e3a5f;
+    color: white;
+    border-radius: 20px;
+}
+
+#servicios{
+    box-sizing: border-box;
+    display: flex;
+    color: white;
+    width: 100%;
+    padding: 2rem 0rem;
+}
+
+#servicios h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#servicios .servicios{
+    box-sizing: border-box;
+    background-color: #2a649f;
+    border-radius: 20px;
+    width: 50%;
+    padding: 3rem;
+    margin-right: 10px;
+}
+#servicios .habilidades{
+    box-sizing: border-box;
+    background-color: #2a649f;
+    border-radius: 20px;
+    width: 50%;
+    padding: 3rem;
+    margin-left: 10px;
+}
+/* =========================
+   FLEXBOX
+========================= */
+
+.contenedor-flex {
+    display: flex;
+    justify-content: center; /* centra horizontal */
+    align-items: stretch; /* iguala altura */
+    gap: 2rem;
+    flex-wrap: wrap; /* permite que bajen en móvil */
+    padding: 2rem;
+}
+
+/* =========================
+   TARJETAS (BOX MODEL)
+========================= */
+
+.tarjeta {
+    background-color: white;
+    width: 280px;
+    padding: 2rem; /* espacio interno */
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative; /* referencia para absolute */
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+}
+
+/* POSITION ABSOLUTE */
+.tarjeta::after {
+    content: "Nuevo";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: crimson;
+    color: white;
+    padding: 5px;
+    font-size: 0.8rem;
+}
+
+/* BOTÓN (block por defecto) */
+button {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* DISPLAY NONE
+   El elemento desaparece completamente
+   del flujo y no ocupa espacio
+*/
+.oculto {
+    display: none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #1e3a5f;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .contenedor-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+}

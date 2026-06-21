@@ -1,0 +1,19 @@
+@use "variables";
+
+body {
+  font-family: Arial, sans-serif;
+  background: variables.$background;
+  color: variables.$text-color;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.dark-mode {
+  background: variables.$dark-bg;
+  color: variables.$dark-text;
+
+  .card {
+    background: variables.$dark-card;
+  }
+}

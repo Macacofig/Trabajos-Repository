@@ -1,0 +1,72 @@
+@use 'variables';
+@use 'mixins';
+
+.social-proof {
+    padding: 60px 0;
+    text-align: center;
+    background-color: variables.$white;
+    margin-top: 272px;
+
+    @include mixins.respond-to(tablet) {
+        margin-top: 150px;
+        padding: 50px 0;
+    }
+
+    @include mixins.respond-to(mobile) {
+        margin-top: 80px;
+        padding: 40px 0;
+    }
+
+    p {
+        color: variables.$text-gray;
+        font-size: 0.9rem;
+        margin-bottom: 40px;
+        font-family:'Rubik-normal', sans-serif;
+
+        @include mixins.respond-to(mobile) {
+            font-size: 0.85rem;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+    }
+
+    &__logos {
+        display: flex;
+        justify-content: space-between;
+        align-self: stretch;
+        flex-wrap: wrap;
+        gap: 50px;
+        max-width: variables.$container-max-width;
+        margin: 0 auto;
+        padding: 0 20px;
+
+        @include mixins.respond-to(tablet) {
+            justify-content: center;
+            gap: 35px;
+        }
+
+        @include mixins.respond-to(mobile) {
+            justify-content: center;
+            gap: 25px;
+        }
+
+        img {
+            height: 35px; 
+            filter: grayscale(0); 
+            opacity: 0.9;
+            transition: all 0.3s;
+
+            @include mixins.respond-to(mobile) {
+                height: 28px;
+            }
+
+            &:hover {
+                opacity: 1;
+                background-color: rgba(0,0,0,0.1);
+                padding: 5px;
+                border-radius: 10px;
+                transform: scale(1.8);
+            }
+        }
+    }
+}

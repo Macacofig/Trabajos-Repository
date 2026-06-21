@@ -1,0 +1,155 @@
+@use '../variables';
+
+.features {
+    padding: 12vh 0; 
+    background-color: variables.$middle-coffee;
+    position: relative;
+    overflow: hidden;
+
+    &__header {
+        padding: 0 8%;
+        margin-bottom: 6vh; 
+        text-align: center; 
+
+        h2 {
+            color: variables.$white;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-family: serif;
+            letter-spacing: 0.15rem;
+        }
+    }
+
+    &__track {
+        display: flex;
+        gap: 2.5rem;
+        padding: 2rem 0; 
+        margin: 0 auto;  
+        max-width: calc(22.5rem * 3 + 2.5rem * 2);
+        
+        /* Permitimos el scroll pero lo ocultamos visualmente */
+        overflow: hidden; 
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+
+        /* Ocultar barra en Chrome, Safari y Opera */
+        &::-webkit-scrollbar {
+            display: none;
+            height: 0.4rem;
+        }
+
+        -ms-overflow-style: none; 
+        scrollbar-width: none;  
+    }
+}
+
+.card {
+    min-width: 18rem; 
+    flex: 0 0 18rem; 
+    scroll-snap-align: start;
+
+    padding: 2.5rem 2rem;
+    background: linear-gradient(
+        135deg, 
+        rgba(variables.$white, 0.1), 
+        rgba(variables.$white, 0.05)
+    );
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    
+    border-radius: 2rem;
+    border: 0.0625rem solid rgba(variables.$white, 0.1);
+    color: variables.$white;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+
+    h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1.25rem;
+        font-weight: 600;
+        color: variables.$white;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        opacity: 0.8;
+        max-width: 30ch;
+    }
+
+    &:hover {
+        transform: translateY(-0.75rem);
+        background: rgba(variables.$black, 0.2);
+        border-color: rgba(variables.$white, 0.4);
+        box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+        
+        p {
+            opacity: 1;
+        }
+    }
+}
+
+.features__btn {
+    position: absolute;
+    top: 93%;
+    transform: translateY(-50%);
+    
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    
+    border: none;
+    cursor: pointer;
+
+    background-color: rgba(variables.$white, 0.2);
+    color: variables.$white;
+    font-size: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    backdrop-filter: blur(0.5rem);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: rgba(variables.$white, 0.4);
+    }
+}
+
+.features__btn.left {
+    left: 23%;
+}
+
+.features__btn.right {
+    right: 23%;
+}
+
+@media (max-width: 30rem) {
+    .card {
+        min-width: 16rem;
+        padding: 2rem 1.5rem;
+    }
+}
+@media (max-width: 64rem) { // 1024px
+    .features__track {
+        width: calc(22.5rem * 2 + 2.5rem * 1);
+    }
+}
+@media (max-width: 48rem) { // 768px
+    .features__track {
+        width: 22.5rem;
+    }
+}
+@media (max-width: 30rem) { // 480px
+    .card {
+        min-width: 18rem;
+        flex: 0 0 18rem;
+    }
+
+    .features__track {
+        width: 18rem;
+    }
+}
