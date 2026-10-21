@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\omkrf\\Desktop\\8vo Semestre\\Arqui\\CRUDBasicoRazorPages\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6F5674FA-891C-4C22-BD0C-67B79EF7FA2A}|CRUDBasicoRazorPages\\CRUDBasicoRazorPages.csproj|c:\\users\\omkrf\\desktop\\8vo semestre\\arqui\\crudbasicorazorpages\\crudbasicorazorpages\\pages\\clientes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F5674FA-891C-4C22-BD0C-67B79EF7FA2A}|CRUDBasicoRazorPages\\CRUDBasicoRazorPages.csproj|solutionrelative:crudbasicorazorpages\\pages\\clientes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F5674FA-891C-4C22-BD0C-67B79EF7FA2A}|CRUDBasicoRazorPages\\CRUDBasicoRazorPages.csproj|c:\\users\\omkrf\\desktop\\8vo semestre\\arqui\\crudbasicorazorpages\\crudbasicorazorpages\\pages\\clientenuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6F5674FA-891C-4C22-BD0C-67B79EF7FA2A}|CRUDBasicoRazorPages\\CRUDBasicoRazorPages.csproj|solutionrelative:crudbasicorazorpages\\pages\\clientenuevo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F5674FA-891C-4C22-BD0C-67B79EF7FA2A}|CRUDBasicoRazorPages\\CRUDBasicoRazorPages.csproj|c:\\users\\omkrf\\desktop\\8vo semestre\\arqui\\crudbasicorazorpages\\crudbasicorazorpages\\pages\\clientenuevo.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5674FA-891C-4C22-BD0C-67B79EF7FA2A}|CRUDBasicoRazorPages\\CRUDBasicoRazorPages.csproj|solutionrelative:crudbasicorazorpages\\pages\\clientenuevo.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F5674FA-891C-4C22-BD0C-67B79EF7FA2A}|CRUDBasicoRazorPages\\CRUDBasicoRazorPages.csproj|c:\\users\\omkrf\\desktop\\8vo semestre\\arqui\\crudbasicorazorpages\\crudbasicorazorpages\\pages\\clientes.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F5674FA-891C-4C22-BD0C-67B79EF7FA2A}|CRUDBasicoRazorPages\\CRUDBasicoRazorPages.csproj|solutionrelative:crudbasicorazorpages\\pages\\clientes.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Clientes.cshtml",
+              "DocumentMoniker": "C:\\Users\\omkrf\\Desktop\\8vo Semestre\\Arqui\\CRUDBasicoRazorPages\\CRUDBasicoRazorPages\\Pages\\Clientes.cshtml",
+              "RelativeDocumentMoniker": "CRUDBasicoRazorPages\\Pages\\Clientes.cshtml",
+              "ToolTip": "C:\\Users\\omkrf\\Desktop\\8vo Semestre\\Arqui\\CRUDBasicoRazorPages\\CRUDBasicoRazorPages\\Pages\\Clientes.cshtml",
+              "RelativeToolTip": "CRUDBasicoRazorPages\\Pages\\Clientes.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-08T16:01:01.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ClienteNuevo.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\omkrf\\Desktop\\8vo Semestre\\Arqui\\CRUDBasicoRazorPages\\CRUDBasicoRazorPages\\Pages\\ClienteNuevo.cshtml.cs",
+              "RelativeDocumentMoniker": "CRUDBasicoRazorPages\\Pages\\ClienteNuevo.cshtml.cs",
+              "ToolTip": "C:\\Users\\omkrf\\Desktop\\8vo Semestre\\Arqui\\CRUDBasicoRazorPages\\CRUDBasicoRazorPages\\Pages\\ClienteNuevo.cshtml.cs",
+              "RelativeToolTip": "CRUDBasicoRazorPages\\Pages\\ClienteNuevo.cshtml.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAowDAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-08T15:34:44.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClienteNuevo.cshtml",
+              "DocumentMoniker": "C:\\Users\\omkrf\\Desktop\\8vo Semestre\\Arqui\\CRUDBasicoRazorPages\\CRUDBasicoRazorPages\\Pages\\ClienteNuevo.cshtml",
+              "RelativeDocumentMoniker": "CRUDBasicoRazorPages\\Pages\\ClienteNuevo.cshtml",
+              "ToolTip": "C:\\Users\\omkrf\\Desktop\\8vo Semestre\\Arqui\\CRUDBasicoRazorPages\\CRUDBasicoRazorPages\\Pages\\ClienteNuevo.cshtml",
+              "RelativeToolTip": "CRUDBasicoRazorPages\\Pages\\ClienteNuevo.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-08T15:33:51.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Clientes.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\omkrf\\Desktop\\8vo Semestre\\Arqui\\CRUDBasicoRazorPages\\CRUDBasicoRazorPages\\Pages\\Clientes.cshtml.cs",
+              "RelativeDocumentMoniker": "CRUDBasicoRazorPages\\Pages\\Clientes.cshtml.cs",
+              "ToolTip": "C:\\Users\\omkrf\\Desktop\\8vo Semestre\\Arqui\\CRUDBasicoRazorPages\\CRUDBasicoRazorPages\\Pages\\Clientes.cshtml.cs",
+              "RelativeToolTip": "CRUDBasicoRazorPages\\Pages\\Clientes.cshtml.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-08T14:36:17.451Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

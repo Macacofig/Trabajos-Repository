@@ -1,0 +1,37 @@
+﻿@page
+@model ProyectoDemo.Pages.ClientesModel
+@{
+}
+
+<h1> Lista de Clientes</h1>
+<p>@Model.Mensaje</p>
+
+<table class="table">
+	<thead>
+		<th>
+			CI/NIT 
+		</th>
+		<th>
+			RazonSocial
+		</th>
+		<th>
+			FechaRegistro
+		</th>
+	</thead>
+	<tbody>
+		@foreach (System.Data.DataRow item in Model.table.Rows)
+		{
+			<tr>
+				<td>
+					@item["ciNit"]
+				</td>
+				<td>
+					@item["razonSocial"]
+				</td>
+				<td>
+					@item["fechaRegistro"]
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

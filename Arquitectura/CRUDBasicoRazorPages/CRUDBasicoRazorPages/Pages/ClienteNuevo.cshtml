@@ -1,0 +1,14 @@
+﻿@page
+@model CRUDBasicoRazorPages.Pages.ClienteNuevoModel
+@{
+}
+<h1>Nuevo Cliente</h1>
+
+<form method="post" class="form-control">
+    <input asp-for="ClienteEntity.CiNit" class="form-control" type="text" placeholder="CI/NIT" />
+    <input asp-for="ClienteEntity.RazonSocial"  class="form-control" type="text" placeholder="Razón Social" />
+    <button type="submit" class="btn-primary btn-lg">Guardar</button>
+    <button  class="btn-secondary btn-lg">Cancelar</button>
+
+
+</form>

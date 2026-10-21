@@ -1,0 +1,33 @@
+﻿@page
+@model CRUDBasicoRazorPages.Pages.ClientesModel
+@{
+}
+
+<h1>Lista de Clientes</h1>
+
+<a class="btn btn-primary" asp-page="ClienteNuevo">+ Agregar Cliente</a>
+
+
+<p>@Model.Mensaje</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>CI/NIT</th>
+            <th>Razón Social</th>
+            <th>Fecha de Registro</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListClientes)
+        {
+            <tr>
+                <td>@item.CiNit</td>
+                <td>@item.RazonSocial</td>
+                <td>@item.FechaRegistro</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
